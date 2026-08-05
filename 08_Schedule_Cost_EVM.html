@@ -1,0 +1,632 @@
+<section class="card">
+
+<h2>Rule 1　Schedule Management Flow</h2>
+
+<div class="rule">
+
+Define Activities
+
+↓
+
+Sequence Activities
+
+↓
+
+Estimate Resources
+
+↓
+
+Estimate Duration
+
+↓
+
+Develop Schedule
+
+↓
+
+Control Schedule
+
+</div>
+
+<div class="trap">
+
+WBSの次にいきなりScheduleを作る。
+
+Durationから考える。
+
+</div>
+
+<div class="memory">
+
+Activities First.
+
+</div>
+
+</section>
+
+
+
+<section class="card">
+
+<h2>Rule 2　Critical Path</h2>
+
+<div class="rule">
+
+Longest Path
+
+↓
+
+Zero Float
+
+↓
+
+Determines Project Duration
+
+</div>
+
+<div class="trap">
+
+一番難しい作業。
+
+一番コストが高い作業。
+
+を選ぶ。
+
+</div>
+
+<div class="memory">
+
+Longest Path
+
+wins.
+
+</div>
+
+</section>
+
+
+
+<section class="card">
+
+<h2>Rule 3　Float</h2>
+
+<div class="rule">
+
+Total Float
+
+=
+
+LS−ES
+
+=
+
+LF−EF
+
+</div>
+
+<table>
+
+<tr>
+
+<th>Float</th>
+
+<th>意味</th>
+
+</tr>
+
+<tr>
+
+<td>0</td>
+
+<td>Critical Path</td>
+
+</tr>
+
+<tr>
+
+<td>Positive</td>
+
+<td>余裕あり</td>
+
+</tr>
+
+<tr>
+
+<td>Negative</td>
+
+<td>遅延状態</td>
+
+</tr>
+
+</table>
+
+<div class="trap">
+
+Critical PathにもFloatがある。
+
+</div>
+
+<div class="memory">
+
+Critical
+
+=
+
+Zero Float
+
+</div>
+
+</section>
+
+
+
+<section class="card">
+
+<h2>Rule 4　EVM公式</h2>
+
+<div class="rule">
+
+CV
+
+=
+
+EV−AC
+
+SPI
+
+=
+
+EV÷PV
+
+CPI
+
+=
+
+EV÷AC
+
+SV
+
+=
+
+EV−PV
+
+</div>
+
+<div class="trap">
+
+EVとPVを逆にする。
+
+CVをAC−EVにする。
+
+</div>
+
+<div class="memory">
+
+CV
+
+Cost
+
+SPI
+
+Schedule
+
+</div>
+
+</section>
+
+
+
+<section class="card">
+
+<h2>Rule 5　EVM判断</h2>
+
+<table>
+
+<tr>
+
+<th>指標</th>
+
+<th>意味</th>
+
+</tr>
+
+<tr>
+
+<td>CV ＞0</td>
+
+<td>予算より良い</td>
+
+</tr>
+
+<tr>
+
+<td>CV ＜0</td>
+
+<td>予算超過</td>
+
+</tr>
+
+<tr>
+
+<td>SPI ＞1</td>
+
+<td>予定より早い</td>
+
+</tr>
+
+<tr>
+
+<td>SPI ＜1</td>
+
+<td>遅れている</td>
+
+</tr>
+
+<tr>
+
+<td>CPI ＞1</td>
+
+<td>コスト効率良い</td>
+
+</tr>
+
+<tr>
+
+<td>CPI ＜1</td>
+
+<td>コスト効率悪い</td>
+
+</tr>
+
+</table>
+
+<div class="trap">
+
+SPI0.6を
+
+「60%完了」
+
+と読む。
+
+</div>
+
+<div class="memory">
+
+SPI
+
+=
+
+Schedule Efficiency
+
+</div>
+
+</section>
+
+
+
+<section class="card">
+
+<h2>Rule 6　Reserve</h2>
+
+<div class="rule">
+
+Known Risk
+
+↓
+
+Contingency Reserve
+
+----------------
+
+Unknown Risk
+
+↓
+
+Management Reserve
+
+</div>
+
+<div class="trap">
+
+全部Contingency。
+
+</div>
+
+<div class="memory">
+
+Known
+
+↓
+
+Contingency
+
+</div>
+
+</section>
+<section class="card">
+
+<h2>Rule 7　Reserve Analysis</h2>
+
+<div class="rule">
+
+Project Risks
+
+↓
+
+Reserve Analysis
+
+↓
+
+Enough Reserve?
+
+↓
+
+Adjust if Needed
+
+</div>
+
+<div class="trap">
+
+Root Cause Analysis。
+
+Sensitivity Analysis。
+
+</div>
+
+<div class="memory">
+
+Reserve Analysis
+
+=
+
+予備費確認
+
+</div>
+
+</section>
+
+
+
+<section class="card">
+
+<h2>Rule 8　Schedule Compression</h2>
+
+<table>
+
+<tr>
+
+<th>Fast Tracking</th>
+
+<th>Crashing</th>
+
+</tr>
+
+<tr>
+
+<td>並行実施</td>
+
+<td>人や費用追加</td>
+
+</tr>
+
+<tr>
+
+<td>Risk↑</td>
+
+<td>Cost↑</td>
+
+</tr>
+
+</table>
+
+<div class="trap">
+
+Fast Tracking
+
+=
+
+人追加
+
+と考える。
+
+</div>
+
+<div class="memory">
+
+Fast
+
+=
+
+Parallel
+
+Crash
+
+=
+
+More Resources
+
+</div>
+
+</section>
+
+
+
+<section class="card">
+
+<h2>Rule 9　Milestone</h2>
+
+<div class="rule">
+
+Zero Duration
+
+↓
+
+Important Event
+
+↓
+
+Decision Point
+
+</div>
+
+<div class="trap">
+
+MilestoneにDurationを書く。
+
+</div>
+
+<div class="memory">
+
+Milestone
+
+=
+
+0 days
+
+</div>
+
+</section>
+
+
+
+<section class="card">
+
+<h2>Rule 10　Burndown Chart</h2>
+
+<div class="rule">
+
+Remaining Work
+
+↓
+
+Ideal Lineと比較
+
+</div>
+
+<div class="trap">
+
+線が高い
+
+↓
+
+進んでいる
+
+と読む。
+
+</div>
+
+<div class="memory">
+
+Higher Remaining
+
+=
+
+Behind
+
+</div>
+
+</section>
+
+
+
+<section class="card">
+
+<h2>Rule 11　Schedule Baseline変更</h2>
+
+<div class="rule">
+
+Impact Analysis
+
+↓
+
+Formal Change
+
+↓
+
+Approval
+
+↓
+
+Update Baseline
+
+</div>
+
+<div class="trap">
+
+PM判断だけで変更。
+
+</div>
+
+<div class="memory">
+
+Baseline
+
+needs approval.
+
+</div>
+
+</section>
+
+
+
+<section class="card">
+
+<h2>Rule 12　Schedule / Cost Summary</h2>
+
+<div class="rule">
+
+Activities
+
+↓
+
+Schedule
+
+↓
+
+Baseline
+
+↓
+
+Monitor
+
+↓
+
+EVM
+
+↓
+
+Forecast
+
+</div>
+
+<h3>あなたのFull Examで多かったミス</h3>
+
+<ul>
+
+<li>SPI計算</li>
+
+<li>CV計算</li>
+
+<li>Reserve Analysis</li>
+
+<li>Burndownの読み方</li>
+
+<li>Critical Path</li>
+
+</ul>
+
+<div class="memory">
+
+Schedule問題は
+
+Formula
+
+Baseline
+
+Formal Change
+
+これだけでかなり解ける。
+
+</div>
+
+</section>
