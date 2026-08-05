@@ -1,0 +1,356 @@
+from pathlib import Path
+import textwrap, html
+
+base = Path("/mnt/data/PMP_Final")
+base.mkdir(parents=True, exist_ok=True)
+
+common_css = """
+:root{
+  --bg:#f5f7fb; --card:#ffffff; --text:#1f2937; --muted:#6b7280;
+  --blue:#1d4ed8; --blue-soft:#eaf2ff; --orange:#d97706; --orange-soft:#fff5e6;
+  --green:#15803d; --green-soft:#eaf7ee; --border:#dbe3ee;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  line-height:1.65;
+}
+header{
+  position:sticky; top:0; z-index:10; background:rgba(255,255,255,.96);
+  border-bottom:1px solid var(--border); padding:14px 18px;
+}
+header .title{font-weight:800;font-size:18px}
+header .sub{font-size:12px;color:var(--muted)}
+main{max-width:900px;margin:0 auto;padding:18px}
+nav.top{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+nav.top a{
+  text-decoration:none;color:var(--blue);background:#fff;border:1px solid var(--border);
+  padding:8px 10px;border-radius:9px;font-size:13px
+}
+.card{
+  background:var(--card); border:1px solid var(--border); border-radius:14px;
+  padding:16px; margin:0 0 14px; box-shadow:0 4px 14px rgba(31,41,55,.05)
+}
+h1{font-size:26px;line-height:1.3;margin:0 0 8px}
+h2{font-size:19px;margin:0 0 12px;color:#123a71}
+h3{font-size:15px;margin:16px 0 8px}
+.rule,.trap,.memory{
+  border-left:5px solid; padding:11px 12px; border-radius:8px; margin:10px 0;
+  white-space:pre-line
+}
+.rule{background:var(--blue-soft);border-color:var(--blue);font-weight:700}
+.trap{background:var(--orange-soft);border-color:var(--orange)}
+.memory{background:var(--green-soft);border-color:var(--green);font-weight:700}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px}
+th,td{border:1px solid var(--border);padding:8px;text-align:left;vertical-align:top}
+th{background:#f0f4f8}
+ul{padding-left:22px}
+.small{font-size:13px;color:var(--muted)}
+footer{padding:24px 18px 40px;text-align:center;color:var(--muted);font-size:12px}
+"""
+
+def page(title, subtitle, cards):
+    return f"""<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{html.escape(title)}</title>
+<style>{common_css}</style>
+</head>
+<body>
+<header>
+  <div class="title">{html.escape(title)}</div>
+  <div class="sub">{html.escape(subtitle)}</div>
+</header>
+<main>
+<nav class="top">
+  <a href="index.html">トップ</a>
+  <a href="01_Stakeholder.html">01 Stakeholder</a>
+  <a href="02_Governance.html">02 Governance</a>
+  <a href="99_Final_Checklist.html">Final Checklist</a>
+</nav>
+{cards}
+</main>
+<footer>PMP Personal Rulebook v7</footer>
+</body>
+</html>"""
+
+def card(num, title, rule, why="", traps=None, memory=""):
+    traps = traps or []
+    why_html = f"<h3>Why</h3><p>{html.escape(why)}</p>" if why else ""
+    trap_html = ""
+    if traps:
+        lis = "".join(f"<li>{html.escape(t)}</li>" for t in traps)
+        trap_html = f'<div class="trap"><strong>Typical traps</strong><ul>{lis}</ul></div>'
+    mem_html = f'<div class="memory">{html.escape(memory)}</div>' if memory else ""
+    return f"""
+<section class="card">
+<h2>Rule {num}　{html.escape(title)}</h2>
+<div class="rule">{html.escape(rule)}</div>
+{why_html}
+{trap_html}
+{mem_html}
+</section>
+"""
+
+# 02 Governance
+gov_cards = []
+
+gov_cards.append(card(
+1, "Governanceが明示されたら正式プロセスを優先",
+"""Governance / PMO / Audit / Compliance / Baseline / Approval
+→ Formal process
+→ Document
+→ Review / Approval
+→ Implement""",
+"スポンサーや顧客の圧力があっても、承認・記録・監査可能性を飛ばさない。",
+["口頭合意だけで進める","価値があるから例外扱いする","後から承認を取る"],
+"価値があっても、承認されるまでは実装しない。"
+))
+
+gov_cards.append(card(
+2, "Unauthorized Work",
+"""Baseline外の作業
+→ Stop unauthorized work
+→ Initiate formal change control
+→ Approve / Reject
+→ Resume only if approved""",
+"無断作業はGold PlatingまたはScope Creepであり、まず止める。",
+["一部できているから残す","スポンサーの事後承認で済ませる","開発者を注意するだけ"],
+"Unauthorized = Stop first."
+))
+
+gov_cards.append(card(
+3, "変更要求の基本",
+"""Change proposal
+→ Assess impact
+→ Formal change request
+→ Governance / CCB
+→ Update plans and baselines
+→ Implement""",
+"影響を把握せずに承認・拒否・実装しない。",
+["すぐ承認","すぐ拒否","非公式にBacklogへ追加"],
+"Analyze first, govern second, implement last."
+))
+
+gov_cards.append(card(
+4, "予算削減・資金制約",
+"""Budget cut
+→ Assess scope / quality / schedule trade-offs
+→ Align stakeholders
+→ Governance approval
+→ Re-baseline""",
+"予算削減はスコープ、品質、納期に波及するため、単独判断ではなく正式な再ベースラインが必要。",
+["スポンサーだけに削除対象を決めてもらう","勝手にScopeを減らす","他部署へ費用を移す"],
+"Budget cut = Re-baseline with governance."
+))
+
+gov_cards.append(card(
+5, "承認済み変更の実装確認",
+"""Approved change
+→ Update baseline
+→ Implement
+→ Verify effectiveness and implementation
+→ Audit / quality review""",
+"Change LogやBaseline更新は記録・基準変更であり、実装確認そのものではない。",
+["Change Log更新だけで完了と考える","Baseline更新を実装確認と混同する"],
+"Approved ≠ Implemented. Verify it."
+))
+
+gov_cards.append(card(
+6, "Complianceはコスト・納期より優先",
+"""Regulatory / Legal / Contractual noncompliance
+→ Stop release or affected work
+→ Correct defects / gaps
+→ Verify compliance
+→ Resume""",
+"法令・規制・契約違反は、保証対応や後修正で済ませない。",
+["出荷後に保証で直す","軽微だから続行","スケジュールを守るため妥協"],
+"Compliance first."
+))
+
+gov_cards.append(card(
+7, "Quality AuditでGapが見つかった",
+"""Audit finding
+→ Corrective action
+→ Verify effectiveness
+→ Resume / continue under control""",
+"監査で確認済みの不備は、会議や追加分析より是正が先。",
+["Stakeholder meetingだけ開く","プロジェクト終盤まで延期","軽微として無視"],
+"Known gap = Corrective action."
+))
+
+gov_cards.append(card(
+8, "Procurementの公平性と透明性",
+"""Bid / Tender / Vendor selection
+→ Follow formal procurement procedures
+→ Use objective criteria
+→ Document evaluation
+→ Award contract""",
+"既存ベンダーを使う場合でも、例外根拠と承認が必要。",
+["時間短縮だけを理由に既存業者へ追加発注","非公式交渉で決定","落選後の説明だけで透明性を担保"],
+"Fairness > convenience."
+))
+
+gov_cards.append(card(
+9, "Sponsorの要望も自動承認ではない",
+"""Sponsor requests change
+→ PM facilitates analysis
+→ Governance reviews
+→ Decision
+→ Implementation""",
+"スポンサーは重要な意思決定者だが、正式プロセスを飛ばす権限ではない。",
+["スポンサーの一言で実装","スポンサーに丸投げ","PMOを無視"],
+"Sponsor pressure does not replace governance."
+))
+
+gov_cards.append(card(
+10, "Baselineの役割",
+"""Baseline
+= approved reference for scope / schedule / cost
+Change to baseline
+→ formal approval required""",
+"Baselineは現状説明ではなく、比較・管理の正式な基準。",
+["実績に合わせて勝手に書き換える","Vendorの都合だけで更新する","変更履歴を残さない"],
+"Baseline is controlled, not casually edited."
+))
+
+gov_cards.append(card(
+11, "IssueとRiskを区別",
+"""Future uncertain event → Risk
+Already occurred → Issue
+Risk → analyze and plan response
+Issue → act, communicate, correct""",
+"既に起きた組織再編や監査指摘をRiskとして扱わない。",
+["起きた後にRisk Registerだけ更新","既発生Issueを様子見"],
+"May happen = Risk. Has happened = Issue."
+))
+
+gov_cards.append(card(
+12, "外部環境変化",
+"""Government / Law / Market / Funding change
+→ Monitor external environment
+→ Impact analysis
+→ Response strategy
+→ Update project plan through governance if needed""",
+"政治・法律・市場・資金の変化は、情報収集と影響分析を経て計画へ反映する。",
+["いきなりSchedule延長","根拠なくScope削減","大丈夫だと先に報告"],
+"Monitor → Analyze → Respond → Update."
+))
+
+gov_cards.append(card(
+13, "PESTLEを使う場面",
+"""External macro-environment
+→ PESTLE
+Political / Economic / Sociocultural / Technological / Legal / Environmental""",
+"外部事業環境の変化を体系的に整理する。",
+["SPIで外部環境を測る","Monte Carloで市場構造を分析","RFPで規制影響を判断"],
+"External environment = PESTLE."
+))
+
+gov_cards.append(card(
+14, "組織変革の導入",
+"""New leadership style / process / culture
+→ Assess current state
+→ Gradual implementation
+→ Coaching
+→ Adapt to project context
+→ Scale""",
+"文化変革は一括命令や研修だけでは定着しない。",
+["全員へ即時強制","Agile案件だけに限定","研修だけで完了"],
+"Transformation is coached and gradual."
+))
+
+gov_cards.append(card(
+15, "ガバナンスの総合判断",
+"""If the stem emphasizes:
+PMO / Audit / Compliance / Formal approval / Baseline / Certification
+→ choose the option that preserves governance integrity""",
+"Study Hallでは、現場の速さや政治的圧力よりも、監査可能で正式な手続きを重視する。",
+["最も協調的に見えるMeetingを選ぶ","最も速い現場対応を選ぶ","後から整える前提で進める"],
+"Governance keywords are strong signals."
+))
+
+gov_html = page(
+    "PMP Personal Rulebook v7 - 02 Governance",
+    "Full Exam / Mini Exam / Practice Questions 統合",
+    "\n".join(gov_cards)
+)
+(base / "02_Governance.html").write_text(gov_html, encoding="utf-8")
+
+# Rebuild Stakeholder as actual full file from prior content, concise but complete
+stake_cards = []
+stake_data = [
+(1,"Stakeholder Management Flow","Identify → Analyze → Plan Engagement → Communicate → Monitor","Stakeholder管理は会議からではなく、特定・分析から始める。",["Meetingから始める","Sponsorへすぐ相談","Communication Planを先に作る"],"Identify and analyze first."),
+(2,"Stakeholder RegisterとAnalysis","Identify stakeholders → Record basic data → Analyze power / interest / influence / impact → Update register","Registerは成果物、Analysisは評価活動。試験では一体として扱われることもある。",["必ず固定的な順序だと考える","Communication Planを先に作る"],"Register stores; analysis interprets."),
+(3,"新しいStakeholder","Update stakeholder register → Analyze role and influence → Tailored onboarding → Update communication / engagement","担当者交代や新規関係者の登場では、まずRegisterを更新する。",["過去判断を再承認させる","Communication Planだけ直す"],"New person = Register first."),
+(4,"Expectation Changes","Discuss with stakeholders → Understand new expectations → Assess impact → Adjust if needed","市場変化で期待が動いた場合は、まず本人たちから確認する。",["Scope Freeze","Teamだけで議論"],"Changing expectations = stakeholder dialogue."),
+(5,"Stakeholder Analysis","Evaluate expectations with power, interest, influence, involvement, and impact","単なるSurveyではなく、意思決定に使える優先順位まで作る。",["外部顧客だけ優先","全員を同じ扱い"],"Collect, then analyze."),
+(6,"Communications Management Plan","Use stakeholder analysis to define who receives what, when, how, and how often","Communication PlanはHowを決める。Whoの把握と分析が先。",["期待値そのものをCommunication Planで決める"],"Who first, how second."),
+(7,"Engagement Strategy","Resistance / culture / integration / buy-in → formal engagement strategy","単発会議ではなく継続的な関与設計が必要。",["Meetingだけで解決","Sponsorに丸投げ"],"Resistance needs a strategy, not a single meeting."),
+(8,"Engagement Assessment Matrix","Identify current and desired engagement levels → define actions to close gaps","RegisterとAnalysisの後に作る。",["Stakeholder特定前に作る"],"Current → Desired → Gap → Action."),
+(9,"Requirement Conflict","Use RTM as an objective reference for requirement source, priority, and alignment","Scope Statementは境界を示すが、優先順位までは扱わない。",["Scope Statementで優先順位を決める","Communication Planを見る"],"Requirement priority = RTM."),
+(10,"Sponsor Escalation","PM assesses and acts within authority → escalate only when authority is exceeded","スポンサーは最初の相談先ではなく、必要時の上位判断者。",["Sponsor First","PMO First"],"Escalation is last."),
+(11,"Stakeholder Complaint","Listen → Understand → Assess → Respond","不満をRisk登録や即エスカレーションで処理しない。",["Defensive response","Immediate escalation"],"Understand before responding."),
+(12,"Stakeholder Priority","Power + Interest + Influence + Impact","優先度は単一要素ではなく複数要素で判断する。",["Financial cloutだけで決める"],"Priority is multidimensional."),
+(13,"Quality Expectations","Document current stakeholder quality requirements → prioritize → agree → baseline","品質観が異なる場合はまずRequirementとして文書化する。",["Risk Registerへ入れる","Lessons Learnedだけ見る"],"Document before prioritizing."),
+(14,"Customer Value","Understand → Validate → Prioritize → Deliver","何を価値とするかを確認してから作る。",["Deliverしてから確認"],"Understand before deliver."),
+(15,"Stakeholder Summary","Identify → Analyze → Engage → Communicate → Monitor","Stakeholder問題の基本フロー。",["Meeting先行","Register省略","Escalation早すぎ"],"Analyze first.")
+]
+for d in stake_data:
+    stake_cards.append(card(*d))
+(base / "01_Stakeholder.html").write_text(
+    page("PMP Personal Rulebook v7 - 01 Stakeholder",
+         "Full Exam / Mini Exam / Practice Questions 統合",
+         "\n".join(stake_cards)),
+    encoding="utf-8"
+)
+
+# basic index
+index_html = f"""<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>PMP Personal Rulebook v7</title><style>{common_css}
+.grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}}
+.tile{{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid var(--border);border-radius:14px;padding:16px}}
+.tile strong{{display:block;color:#123a71;margin-bottom:6px}}
+.disabled{{opacity:.45;pointer-events:none}}
+</style></head>
+<body>
+<header><div class="title">PMP Personal Rulebook v7</div><div class="sub">テーマ別統合版</div></header>
+<main>
+<section class="card">
+<h1>テーマ一覧</h1>
+<p class="small">完成済みテーマから順次追加。</p>
+<div class="grid">
+<a class="tile" href="01_Stakeholder.html"><strong>01 Stakeholder</strong>特定・分析・Engagement・Communication</a>
+<a class="tile" href="02_Governance.html"><strong>02 Governance</strong>Change Control・Compliance・Audit・Baseline</a>
+<a class="tile disabled" href="#"><strong>03 Risk</strong>作成中</a>
+<a class="tile disabled" href="#"><strong>04 Quality</strong>作成中</a>
+<a class="tile disabled" href="#"><strong>05 Agile</strong>作成中</a>
+<a class="tile disabled" href="#"><strong>06 Procurement</strong>作成中</a>
+<a class="tile disabled" href="#"><strong>07 Scope & Requirements</strong>作成中</a>
+<a class="tile disabled" href="#"><strong>08 Schedule / Cost / EVM</strong>作成中</a>
+<a class="tile disabled" href="#"><strong>09 Team & Leadership</strong>作成中</a>
+<a class="tile disabled" href="#"><strong>10 Communication</strong>作成中</a>
+<a class="tile disabled" href="#"><strong>99 Final Checklist</strong>作成中</a>
+</div>
+</section>
+</main>
+<footer>PMP Personal Rulebook v7</footer>
+</body></html>"""
+(base / "index.html").write_text(index_html, encoding="utf-8")
+
+# placeholder checklist so nav link works
+check_html = page(
+    "PMP Personal Rulebook v7 - Final Checklist",
+    "試験直前確認用",
+    card(1, "暫定チェック", "Analyze first\nEscalate last\nGovernance when required\nQuality and compliance before cost and schedule",
+         memory="このファイルは最終段階で完成版に更新します。")
+)
+(base / "99_Final_Checklist.html").write_text(check_html, encoding="utf-8")
+
+print("Created:", [p.name for p in sorted(base.iterdir())])
