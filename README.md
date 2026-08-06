@@ -1,2 +1,2 @@
-# pmp-rulebook-v8
-Personal PMP Rulebook v8 - Decision Support System for PMI Study Hall
+# pmp-rulebook-v7
+Personal PMP Rulebook v7 - Decision Support System for PMI Study Hall
