@@ -1,132 +1,1172 @@
-from pathlib import Path
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PMP Rulebook v7 - 05 Agile</title>
+<link rel="stylesheet" href="style.css">
+</head>
 
-out = Path("/mnt/data/05_Agile.html")
+<body>
 
-sections = [
-("Agileでは価値の高いものを先に",
-"Market pressure / early release → Reprioritize backlog → Deliver highest-value features first → Release incrementally → Gather feedback → Adapt",
-"Velocity強制・残業・品質低下で全機能を早めない。",
-"More value, not merely more output."),
-("Backlog Refinement",
-"Large / vague PBI → Break down epics → Add acceptance criteria → Estimate → Make items ready for Sprint Planning",
-"Sprint Planningで初めて詳細化しない。Acceptance CriteriaなしでReady扱いしない。",
-"Refinement makes PBIs ready."),
-("Sprint Planningとの違い",
-"Refinement = Product Backlogを整える / Sprint Planning = ReadyなPBIを選びSprint GoalとSprint Backlogを作る",
-"RefinementでSprint Backlogを確定しない。",
-"Refine first, select in Sprint Planning."),
-("Sprint中の変更要求",
-"Stakeholder request → Meet stakeholder and Product Owner → Evaluate impact and priority → Update backlog if appropriate → Protect Sprint Goal",
-"Daily Scrumで決めない。即Backlog変更しない。Sprintを簡単に中止しない。",
-"Evaluate with the PO before changing work."),
-("Sprint Scope",
-"Confirm work meets DoD → Maintain Sprint Goal and committed scope → Pull new work only through agreed process",
-"空きがあるから勝手にPBIを追加しない。",
-"Quality and predictability before extra work."),
-("Daily Scrum",
-"Team synchronization / progress toward Sprint Goal / blocker visibility ≠ management status report",
-"Stakeholder要求の議論、代理報告、詳細問題解決会議にしない。",
-"Daily Scrum is for team coordination."),
-("曖昧な進捗報告",
-"Vague updates + no visible progress → Private 1-on-1 → Understand blocker → Agree action → Team support if needed",
-"即担当変更・即Escalate・原因不明のまま全員支援をしない。",
-"Understand the blocker first."),
-("Working Agreement",
-"Individual violation → remind/coach / Team-wide violation → revisit ground rules → remove obstacles → recommit",
-"法務、上位管理職、交代へすぐ進まない。",
-"Working agreement first, escalation last."),
-("Agile導入",
-"Assess maturity → Identify gaps → Targeted training → Coaching → Gradual adoption",
-"一律研修を先に契約しない。儀式を即強制しない。",
-"Assess before training."),
-("外部依存の解消",
-"Repeated bottleneck from external expert → Assess team skills → Upskill / mentor → Internalize capability",
-"Sprint延長、外部要員追加、準備なしの即停止を選ばない。",
-"Build capability, not permanent dependency."),
-("Team Conflict",
-"Individual asks for advice → Coach direct resolution / Whole-team conflict → Facilitate constructive dialogue",
-"PMが相手へ直接注意、公開で責める、即懲戒をしない。",
-"Coach first; facilitate when the team is involved."),
-("Servant Leadership",
-"Listen → Coach → Remove impediments → Enable self-management → Protect sustainable pace",
-"Command and control。PMが全問題を直接解決しない。",
-"Enable the team instead of controlling it."),
-("持続可能なVelocity",
-"Do not force velocity → Reprioritize value → Review capacity → Achievable commitments → Protect quality and morale",
-"残業常態化、上からVelocity設定、人員追加で即高速化を狙わない。",
-"Sustainable pace protects delivery."),
-("市場変化",
-"Volatile market → Short feedback loops → Frequent reviews → Reprioritize backlog → Incremental delivery",
-"BufferやReserveだけで適応できると考えない。",
-"Feedback → Adapt → Deliver again."),
-("Incremental Delivery",
-"Prioritize high-demand / high-value features → Check dependencies → Release useful increments → Learn",
-"依存関係分析だけで終えない。全完成まで待たない。",
-"High value first, then feedback."),
-("Burndown",
-"Actual remaining work > Expected = Behind / Actual < Expected = Ahead",
-"線が上にある方を進んでいると誤読しない。",
-"More remaining work = slower progress."),
-("CFD",
-"Band width = work in that state / Widening In Progress = bottleneck / Done boundary rising = completion",
-"各線を独立した件数として読まない。",
-"In CFD, the space between lines is the work state."),
-("Information Radiator",
-"Distributed team / language barriers → Electronic task board → Visualize To Do / In Progress / Done",
-"口頭報告を増やす、高価な翻訳を最初に入れる、を避ける。",
-"When words fail, visualize work."),
-("Retrospective",
-"Inspect process → Identify improvement → Assign action → Apply next period → Review result",
-"終了時だけ実施、保存するだけ、にしない。",
-"Retrospective must change future behavior."),
-("Hybrid",
-"Review milestones and capacity → Adjust assignments / sequencing → Align mitigation → Preserve governance for baseline changes",
-"Predictiveだから一切変更しない、Agileだから非公式変更、を避ける。",
-"Hybrid = adapt delivery while preserving governance."),
-("Tuckman Ladder",
-"Forming → Storming → Norming → Performing → Adjourning",
-"Adjourningを途中に置かない。",
-"F-S-N-P-A."),
-("Agile Summary",
-"Value first → Short feedback → Clear backlog → Sustainable pace → Coaching → Inspect and adapt",
-"Velocity強制、非公式変更、Escalation先行、Meetingだけで解決、を避ける。",
-"Deliver value early, learn quickly, protect the team.")
-]
+<div class="wrapper">
 
-style = """
-body{margin:0;background:#f5f7fb;color:#1f2937;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Yu Gothic",sans-serif;line-height:1.65}
-header{position:sticky;top:0;background:#fff;border-bottom:1px solid #dbe3ee;padding:14px 18px}
-main{max-width:900px;margin:0 auto;padding:18px}
-nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
-nav a{color:#1d4ed8;text-decoration:none;background:#fff;border:1px solid #dbe3ee;border-radius:9px;padding:8px 10px;font-size:13px}
-.card{background:#fff;border:1px solid #dbe3ee;border-radius:14px;padding:16px;margin-bottom:14px}
-h1{font-size:26px}h2{font-size:19px;color:#123a71;margin-top:0}
-.rule,.trap,.memory{border-left:5px solid;padding:11px 12px;border-radius:8px;margin:10px 0;white-space:pre-line}
-.rule{background:#eaf2ff;border-color:#1d4ed8;font-weight:700}
-.trap{background:#fff5e6;border-color:#d97706}
-.memory{background:#eaf7ee;border-color:#15803d;font-weight:700}
-.small{font-size:13px;color:#6b7280}
-"""
+<header>
 
-cards = []
-for i,(title,rule,trap,memory) in enumerate(sections,1):
-    cards.append(f"""
+<h1>PMP Personal Rulebook v7</h1>
+
+<div class="subtitle">
+Decision Support System for PMI Study Hall
+</div>
+
+<nav>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="01_Stakeholder.html">01</a>
+
+<a href="02_Governance.html">02</a>
+
+<a href="03_Risk.html">03</a>
+
+<a href="04_Quality.html">04</a>
+
+<a href="05_Agile.html" class="active">05</a>
+
+<a href="06_Procurement.html">06</a>
+
+<a href="07_Scope_Requirements.html">07</a>
+
+<a href="08_Schedule_Cost_EVM.html">08</a>
+
+<a href="09_Team_Leadership.html">09</a>
+
+<a href="10_Communication.html">10</a>
+
+<a href="11_Change_Management.html">11</a>
+
+<a href="12_Business_Value.html">12</a>
+
+<a href="13_Integration.html">13</a>
+
+<a href="14_Process_Framework.html">14</a>
+
+<a href="15_Final_Checklist.html">15</a>
+
+</nav>
+
+</header>
+
+<h2>05 Agile / Hybrid</h2>
+
+
 <section class="card">
-<h2>Rule {i}　{title}</h2>
-<div class="rule">{rule}</div>
-<div class="trap">{trap}</div>
-<div class="memory">{memory}</div>
-</section>""")
 
-doc = f"""<!doctype html><html lang="ja"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PMP Personal Rulebook v7 - 05 Agile</title><style>{style}</style></head><body>
-<header><strong>PMP Personal Rulebook v7 - 05 Agile</strong></header>
-<main>
-<nav><a href="index.html">トップ</a><a href="01_Stakeholder.html">01 Stakeholder</a><a href="02_Governance.html">02 Governance</a><a href="03_Risk.html">03 Risk</a><a href="04_Quality.html">04 Quality</a><a href="05_Agile.html">05 Agile</a><a href="99_Final_Checklist.html">Final Checklist</a></nav>
-<section class="card"><h1>05 Agile / Hybrid</h1><p class="small">Backlog・Sprint・Value・Feedback・Coaching・Working Agreement・Hybrid。</p></section>
-{''.join(cards)}
-</main></body></html>"""
+<h2>Rule 1　AgileはValue First</h2>
 
-out.write_text(doc, encoding="utf-8")
-print(out)
+<div class="rule">
+
+Business Need / Market Pressure
+
+↓
+
+Reprioritize Backlog
+
+↓
+
+Highest Value First
+
+↓
+
+Incremental Delivery
+
+↓
+
+Feedback
+
+↓
+
+Adapt
+
+</div>
+
+<div class="trap">
+
+全機能を早くするために
+
+Velocityを強制する。
+
+残業を増やす。
+
+品質を下げる。
+
+</div>
+
+<div class="memory">
+
+More Value
+
+Not More Output
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 2　Backlog Refinement</h2>
+
+<div class="rule">
+
+Large / Vague PBI
+
+↓
+
+Break Down
+
+↓
+
+Clarify
+
+↓
+
+Add Acceptance Criteria
+
+↓
+
+Estimate
+
+↓
+
+Ready for Sprint Planning
+
+</div>
+
+<div class="trap">
+
+Acceptance CriteriaがないままReady扱い。
+
+Sprint Planningで初めて詳細化する。
+
+</div>
+
+<div class="memory">
+
+Refinement
+
+makes PBIs
+
+Ready.
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 3　Refinement vs Sprint Planning</h2>
+
+<table>
+
+<tr>
+<th>Backlog Refinement</th>
+<th>Sprint Planning</th>
+</tr>
+
+<tr>
+<td>PBIを小さく・明確にする</td>
+<td>今回のSprintで何をするか決める</td>
+</tr>
+
+<tr>
+<td>Acceptance Criteria</td>
+<td>Sprint Goal</td>
+</tr>
+
+<tr>
+<td>Estimate</td>
+<td>Sprint Backlog</td>
+</tr>
+
+<tr>
+<td>Readyにする</td>
+<td>ReadyなPBIを選ぶ</td>
+</tr>
+
+</table>
+
+<div class="memory">
+
+Refine First
+
+↓
+
+Select in Sprint Planning
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 4　Sprint中の変更要求</h2>
+
+<div class="rule">
+
+Stakeholder Request
+
+↓
+
+Understand Request
+
+↓
+
+Discuss with Product Owner
+
+↓
+
+Evaluate Impact / Priority
+
+↓
+
+Backlog Decision
+
+↓
+
+Protect Sprint Goal
+
+</div>
+
+<div class="trap">
+
+Daily Scrumで変更を決める。
+
+即Backlog変更。
+
+Sprintを簡単にCancel。
+
+</div>
+
+<div class="memory">
+
+Evaluate
+
+with the PO
+
+before changing work.
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 5　Sprint Scope</h2>
+
+<div class="rule">
+
+Sprint Goal
+
+↓
+
+Committed Work
+
+↓
+
+Definition of Done
+
+↓
+
+Maintain Predictability
+
+</div>
+
+<p>
+空きCapacityが見えても、
+Sprint途中で勝手に新しいBacklog Itemを追加しない。
+</p>
+
+<div class="trap">
+
+暇そうだから追加作業をPullする。
+
+</div>
+
+<div class="memory">
+
+Protect
+
+Sprint Goal
+
+and Predictability.
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 6　Daily Scrum</h2>
+
+<div class="rule">
+
+Inspect Progress
+
+↓
+
+Synchronize Team
+
+↓
+
+Expose Blockers
+
+↓
+
+Adapt Daily Plan
+
+</div>
+
+<p>
+Daily Scrumは管理者向けStatus Reportではない。
+</p>
+
+<div class="trap">
+
+Stakeholder要求の議論。
+
+代理報告。
+
+長い問題解決会議。
+
+</div>
+
+<div class="memory">
+
+Daily Scrum
+
+=
+
+Team Coordination
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 7　曖昧な進捗報告</h2>
+
+<div class="rule">
+
+Vague Update
+
++
+
+No Visible Progress
+
+↓
+
+Private 1-on-1
+
+↓
+
+Understand Blocker
+
+↓
+
+Agree Action
+
+↓
+
+Support if Needed
+
+</div>
+
+<div class="trap">
+
+即担当変更。
+
+即Escalation。
+
+原因不明のまま全員で支援。
+
+</div>
+
+<div class="memory">
+
+Understand
+
+the Blocker
+
+First.
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 8　Working Agreement / Ground Rules</h2>
+
+<div class="rule">
+
+Individual Violation
+
+↓
+
+Reminder / Coaching
+
+
+Team-wide Problem
+
+↓
+
+Revisit Ground Rules
+
+↓
+
+Remove Obstacles
+
+↓
+
+Recommit
+
+</div>
+
+<div class="trap">
+
+LegalへEscalate。
+
+即Member交代。
+
+Rewardだけで行動を変える。
+
+</div>
+
+<div class="memory">
+
+Agreement First
+
+Escalation Last
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 9　Agile導入</h2>
+
+<div class="rule">
+
+Assess Agile Maturity
+
+↓
+
+Identify Skill Gaps
+
+↓
+
+Targeted Training
+
+↓
+
+Coaching
+
+↓
+
+Gradual Adoption
+
+</div>
+
+<div class="trap">
+
+能力評価前に一律研修。
+
+いきなり全面導入。
+
+</div>
+
+<div class="memory">
+
+Assess
+
+Before
+
+Training.
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 10　外部依存を減らす</h2>
+
+<div class="rule">
+
+Repeated Bottleneck
+
+↓
+
+Assess Team Skills
+
+↓
+
+Upskill / Mentor
+
+↓
+
+Internalize Capability
+
+↓
+
+Reduce Dependency
+
+</div>
+
+<div class="trap">
+
+Sprintを延長する。
+
+外部Expertをさらに追加する。
+
+準備なしでExternal Supportを即停止。
+
+</div>
+
+<div class="memory">
+
+Build Capability
+
+Not Dependency
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 11　Team Conflict</h2>
+
+<div class="rule">
+
+Individual Asks for Advice
+
+↓
+
+Coach Direct Resolution
+
+
+Whole-team Conflict
+
+↓
+
+Constructive Dialogue
+
+↓
+
+Facilitate Resolution
+
+</div>
+
+<div class="trap">
+
+PMが相手に直接注意。
+
+公開で責める。
+
+即懲戒。
+
+</div>
+
+<div class="memory">
+
+Coach First
+
+Facilitate When Needed
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 12　Servant Leadership</h2>
+
+<div class="rule">
+
+Listen
+
+↓
+
+Coach
+
+↓
+
+Remove Impediments
+
+↓
+
+Enable Team
+
+↓
+
+Protect Sustainable Pace
+
+</div>
+
+<div class="trap">
+
+Command and Control。
+
+PMがすべての問題を直接解決。
+
+</div>
+
+<div class="memory">
+
+Enable
+
+Do Not Control
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 13　Sustainable Velocity</h2>
+
+<div class="rule">
+
+Business Pressure
+
+↓
+
+Reprioritize Value
+
+↓
+
+Review Capacity
+
+↓
+
+Set Achievable Commitments
+
+↓
+
+Protect Quality / Morale
+
+</div>
+
+<div class="trap">
+
+Velocity強制。
+
+残業常態化。
+
+人員追加だけで即高速化。
+
+</div>
+
+<div class="memory">
+
+Sustainable Pace
+
+Protects Delivery
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 14　市場変化への適応</h2>
+
+<div class="rule">
+
+Volatile Market
+
+↓
+
+Short Feedback Loops
+
+↓
+
+Frequent Review
+
+↓
+
+Backlog Reprioritization
+
+↓
+
+Incremental Delivery
+
+</div>
+
+<div class="trap">
+
+BufferやReserveだけで変化へ対応できると考える。
+
+</div>
+
+<div class="memory">
+
+Feedback
+
+↓
+
+Adapt
+
+↓
+
+Deliver Again
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 15　Incremental Delivery</h2>
+
+<div class="rule">
+
+High-demand / High-value Feature
+
+↓
+
+Prioritize
+
+↓
+
+Check Dependencies
+
+↓
+
+Release Useful Increment
+
+↓
+
+Collect Feedback
+
+</div>
+
+<div class="trap">
+
+Dependency Analysisだけして終わる。
+
+全機能完成までReleaseしない。
+
+</div>
+
+<div class="memory">
+
+High Value First
+
+Then Feedback
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 16　Burndown Chart</h2>
+
+<div class="rule">
+
+Actual Remaining
+
+&gt;
+
+Expected Remaining
+
+=
+
+Behind
+
+
+Actual Remaining
+
+&lt;
+
+Expected Remaining
+
+=
+
+Ahead
+
+</div>
+
+<div class="trap">
+
+Actual線が上にあるほど進んでいると考える。
+
+</div>
+
+<div class="memory">
+
+More Remaining Work
+
+=
+
+Slower Progress
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 17　Cumulative Flow Diagram</h2>
+
+<div class="rule">
+
+Band Width
+
+=
+
+Work in that State
+
+
+Widening In Progress
+
+=
+
+Bottleneck
+
+
+Rising Done Boundary
+
+=
+
+Completion Increasing
+
+</div>
+
+<div class="trap">
+
+各線そのものを
+
+To Do / In Progress / Done件数
+
+として読む。
+
+</div>
+
+<div class="memory">
+
+CFD
+
+=
+
+Read the Space
+
+Between Lines
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 18　Information Radiator</h2>
+
+<div class="rule">
+
+Distributed Team
+
++
+
+Language Barrier
+
+↓
+
+Visualize Work
+
+↓
+
+Electronic Task Board
+
+</div>
+
+<p>
+Task Board・Kanban・Dashboardなどで、
+言葉への依存を減らす。
+</p>
+
+<div class="trap">
+
+口頭説明を増やす。
+
+最初から高価な翻訳サービス。
+
+</div>
+
+<div class="memory">
+
+When Words Fail
+
+Visualize Work
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 19　Retrospective</h2>
+
+<div class="rule">
+
+Inspect Process
+
+↓
+
+Identify Improvement
+
+↓
+
+Assign Action
+
+↓
+
+Apply Improvement
+
+↓
+
+Review Result
+
+</div>
+
+<div class="trap">
+
+Project終了時だけ実施。
+
+Lessons Learnedを保存して終わる。
+
+</div>
+
+<div class="memory">
+
+Retrospective
+
+must change
+
+future behavior.
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 20　Hybrid</h2>
+
+<div class="rule">
+
+Predictive Governance
+
++
+
+Adaptive Delivery
+
+↓
+
+Review Milestones / Capacity
+
+↓
+
+Adjust Work / Sequencing
+
+↓
+
+Align Mitigation
+
+↓
+
+Formal Control for Baseline Changes
+
+</div>
+
+<div class="trap">
+
+Predictiveだから一切変更しない。
+
+AgileだからBaselineを非公式に変更。
+
+</div>
+
+<div class="memory">
+
+Hybrid
+
+=
+
+Adapt Delivery
+
+Preserve Governance
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 21　Tuckman Ladder</h2>
+
+<div class="rule">
+
+Forming
+
+↓
+
+Storming
+
+↓
+
+Norming
+
+↓
+
+Performing
+
+↓
+
+Adjourning
+
+</div>
+
+<div class="trap">
+
+Adjourningを途中に入れる。
+
+</div>
+
+<div class="memory">
+
+F
+
+S
+
+N
+
+P
+
+A
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 22　Agile Summary</h2>
+
+<div class="rule">
+
+Value First
+
+↓
+
+Clear Backlog
+
+↓
+
+Short Feedback
+
+↓
+
+Sustainable Pace
+
+↓
+
+Coach the Team
+
+↓
+
+Inspect and Adapt
+
+</div>
+
+<h3>試験で迷ったら</h3>
+
+<ul>
+
+<li>Velocityを強制しない</li>
+
+<li>High-value Itemを先にする</li>
+
+<li>変更はPOとEvaluateする</li>
+
+<li>Backlog RefinementでReadyにする</li>
+
+<li>Blockerはまず理解する</li>
+
+<li>Working Agreementを尊重する</li>
+
+<li>TeamをCoachする</li>
+
+<li>短いFeedback Loopを使う</li>
+
+<li>HybridでもGovernanceを守る</li>
+
+</ul>
+
+<div class="memory">
+
+Deliver Value Early
+
+Learn Quickly
+
+Protect the Team
+
+</div>
+
+</section>
+    
+<footer>
+
+PMP Personal Rulebook v7
+
+</footer>
+
+<div class="page-nav">
+
+<a href="04_Quality.html">← Previous</a>
+
+<a href="06_Procurement.html">Next →</a>
+
+</div>
+
+</div>
+
+<a href="#" class="top">↑</a>
+
+</body>
+
+</html>
