@@ -1,6 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PMP Rulebook v7 - 07 Scope & Requirements</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<header>
+
+<h1>PMP Personal Rulebook v7</h1>
+
+<div class="subtitle">
+Decision Support System for PMI Study Hall
+</div>
+
+<nav>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="01_Stakeholder.html">01</a>
+
+<a href="02_Governance.html">02</a>
+
+<a href="03_Risk.html">03</a>
+
+<a href="04_Quality.html">04</a>
+
+<a href="05_Agile.html">05</a>
+
+<a href="06_Procurement.html">06</a>
+
+<a href="07_Scope_Requirements.html" class="active">07</a>
+
+<a href="08_Schedule_Cost_EVM.html">08</a>
+
+<a href="09_Team_Leadership.html">09</a>
+
+<a href="10_Communication.html">10</a>
+
+<a href="11_Change_Management.html">11</a>
+
+<a href="12_Business_Value.html">12</a>
+
+<a href="13_Integration.html">13</a>
+
+<a href="14_Process_Framework.html">14</a>
+
+<a href="15_Final_Checklist.html">15</a>
+
+</nav>
+
+</header>
+
+<h2>07 Scope & Requirements</h2>
+
+
 <section class="card">
 
-<h2>Rule 1　Scope Management Flow</h2>
+<h2>Rule 1　Predictive Scopeの基本Flow</h2>
 
 <div class="rule">
 
@@ -38,41 +100,59 @@ Scheduleから考える。
 
 <div class="memory">
 
-Requirements First.
+Requirements First
+
+↓
+
+Scope
+
+↓
+
+WBS
 
 </div>
 
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 2　Requirementsが衝突したら</h2>
+<h2>Rule 2　Requirements Conflict</h2>
 
 <div class="rule">
+
+Conflicting Requirements
+
+↓
 
 Review RTM
 
 ↓
 
-Business Objectives
+Trace to Source / Business Objective
 
 ↓
 
-Priority
+Review Priority
 
 ↓
 
-Agreement
+Facilitate Agreement
 
 </div>
 
+<p>
+Stakeholder同士でRequirementの優先順位が衝突した場合、
+RTMを客観的な共通参照点として使う。
+</p>
+
 <div class="trap">
 
-Scope Statementだけ見る。
+Scope Statementだけを見る。
 
 Communication Planを見る。
+
+PMが独断で優先順位を決める。
 
 </div>
 
@@ -89,10 +169,9 @@ RTM
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 3　RTMの役割</h2>
+<h2>Rule 3　Requirements Traceability Matrix</h2>
 
 <div class="rule">
 
@@ -104,6 +183,10 @@ Source
 
 ↓
 
+Business Objective / Need
+
+↓
+
 Priority
 
 ↓
@@ -112,44 +195,35 @@ Deliverable
 
 ↓
 
-Verification
+Verification / Status
 
 </div>
 
-<h3>RTMで確認できること</h3>
-
-<ul>
-
-<li>誰が要求したか</li>
-
-<li>なぜ必要か</li>
-
-<li>優先順位</li>
-
-<li>どの成果物に対応するか</li>
-
-<li>テスト方法</li>
-
-</ul>
+<p>
+RTMはRequirementがどこから来て、
+どの成果物で満たされ、
+どう検証されるかを追跡する。
+</p>
 
 <div class="trap">
 
-RTM＝Task管理
+RTM ＝ Task管理表。
 
-ではない。
+完了Requirementを変更時に削除する。
 
 </div>
 
 <div class="memory">
 
-Trace
+Trace Requirements
 
-everything.
+from Origin
+
+to Verification
 
 </div>
 
 </section>
-
 
 
 <section class="card">
@@ -168,13 +242,19 @@ WBS
 
 WBS Dictionary
 
+=
+
+Scope Baseline
+
 </div>
 
 <div class="trap">
 
-Scheduleを含める。
+ScheduleをScope Baselineに含める。
 
-Costを含める。
+Cost Baselineを含める。
+
+RTMをScope Baselineそのものと考える。
 
 </div>
 
@@ -184,52 +264,73 @@ Scope Baseline
 
 =
 
-3 documents.
+Scope Statement
+
++
+
+WBS
+
++
+
+WBS Dictionary
 
 </div>
 
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 5　WBSの役割</h2>
+<h2>Rule 5　WBS</h2>
 
 <div class="rule">
+
+Project Scope
+
+↓
 
 Deliverables
 
 ↓
 
+Sub-deliverables
+
+↓
+
 Work Packages
-
-↓
-
-Planning
-
-↓
-
-Control
 
 </div>
 
+<p>
+WBSはScopeを管理可能な単位まで
+階層的にDecomposeする。
+
+基本はDeliverable-oriented。
+</p>
+
 <div class="trap">
 
-Activity一覧を書く。
+Activity一覧をそのままWBSにする。
 
-担当者一覧を書く。
+担当者一覧をWBSにする。
+
+Scheduleを先に作ってWBSを逆算する。
 
 </div>
 
 <div class="memory">
 
-Deliverable-oriented.
+WBS
+
+=
+
+Deliverable-oriented
+
+Scope Decomposition
 
 </div>
 
 </section>
-
 
 
 <section class="card">
@@ -238,72 +339,81 @@ Deliverable-oriented.
 
 <div class="rule">
 
-Each Work Package
+Work Package
 
 ↓
 
-Description
+Detailed Description
 
 ↓
 
-Acceptance Criteria
+Acceptance / Quality Information
 
 ↓
 
-Responsible
+Assumptions / Constraints
 
 ↓
 
-Assumptions
-
-↓
-
-Constraints
+Responsible Organization / Other Planning Details
 
 </div>
 
+<p>
+WBS Dictionaryは、
+WBS上の各Componentについて詳細情報を補足する。
+
+内容はProjectやOrganizationによって異なり、
+担当組織・Schedule Milestone・Cost Estimateなどを
+含むこともある。
+</p>
+
 <div class="trap">
 
-Scopeそのものを書く。
+WBS Dictionaryを単なるRequirement一覧と考える。
 
-Business Rule全部を書く。
+WBSと同じ情報しかないと考える。
 
 </div>
 
 <div class="memory">
 
-Dictionary
+WBS shows
 
-explains
+WHAT.
 
-the WBS.
+Dictionary explains
+
+the DETAILS.
 
 </div>
 
 </section>
+
+
 <section class="card">
 
 <h2>Rule 7　Requirements Gathering</h2>
 
 <div class="rule">
 
-Stakeholders
+Identify Stakeholders
 
 ↓
 
-Interviews
+Engage Stakeholders
 
 ↓
 
-Workshops
+Interviews / Workshops / Observation / Other Techniques
 
 ↓
 
-Observation
+Document Requirements
 
 ↓
 
-Requirements Documentation
+Analyze / Prioritize
 
 </div>
 
@@ -311,29 +421,32 @@ Requirements Documentation
 
 PMだけでRequirementsを書く。
 
-Sponsorだけに聞く。
+SponsorだけからRequirementsを集める。
+
+全Stakeholderを同じ重要度で扱う。
 
 </div>
 
 <div class="memory">
 
-Requirements come
+Requirements
 
-from stakeholders.
+come from
+
+Stakeholder Needs
 
 </div>
 
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 8　Requirements変更</h2>
+<h2>Rule 8　Requirement Change</h2>
 
 <div class="rule">
 
-New Requirement
+New / Changed Requirement
 
 ↓
 
@@ -349,92 +462,121 @@ Approval
 
 ↓
 
-Update Baseline
+Update Scope Baseline / RTM / Relevant Plans
+
+↓
+
+Implement
 
 </div>
 
+<p>
+PredictiveまたはFormal Governance下では、
+Requirement変更も正式なChange Controlを通す。
+</p>
+
 <div class="trap">
 
-RTMだけ更新。
+RTMだけ更新して実装。
 
-Backlogへ勝手に追加。
+Sponsor要求だから即追加。
+
+Backlogへ非公式に追加。
 
 </div>
 
 <div class="memory">
 
-Requirement
+Requirement Change
 
-changes
+=
 
-follow Change Control.
+Analyze
+
+↓
+
+Approve
+
+↓
+
+Update
+
+↓
+
+Implement
 
 </div>
 
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 9　Predictive vs Agile</h2>
+<h2>Rule 9　Predictive Scope vs Agile Scope</h2>
 
 <table>
 
 <tr>
 <th>Predictive</th>
-<th>Agile</th>
-</tr>
-
-<tr>
-<td>Scopeを先に確定</td>
-<td>Scopeは進化する</td>
-</tr>
-
-<tr>
-<td>WBS</td>
-<td>Product Backlog</td>
+<th>Agile / Adaptive</th>
 </tr>
 
 <tr>
 <td>Scope Baseline</td>
-<td>Backlog Refinement</td>
+<td>Product Backlog</td>
 </tr>
 
 <tr>
-<td>Formal Change</td>
-<td>Continuous Prioritization</td>
+<td>WBS</td>
+<td>Epics / Features / User Stories</td>
+</tr>
+
+<tr>
+<td>Scopeを比較的早期に詳細化</td>
+<td>Progressive Elaboration</td>
+</tr>
+
+<tr>
+<td>Formal Change Control</td>
+<td>Backlog Reprioritization</td>
 </tr>
 
 </table>
 
+<p>
+建設などScopeが比較的安定したProjectではWBSが強い。
+
+不確実性が高いProduct Developmentでは
+Backlogを継続的にRefineする。
+</p>
+
 <div class="trap">
 
-ConstructionでBacklog。
+Agileでは絶対にWBSを使えない。
 
-Software AgileでWBS。
+Hybridでも必ずどちらか一方だけを選ぶ。
 
 </div>
 
 <div class="memory">
 
-Construction
+Stable Scope
 
-→ WBS
+→ Baseline / WBS
 
-Agile
 
-→ Backlog
+Evolving Scope
+
+→ Backlog / Refinement
 
 </div>
 
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 10　Control Accounts</h2>
+<h2>Rule 10　Control Account</h2>
 
 <div class="rule">
 
@@ -452,25 +594,25 @@ Budget
 
 Control Account
 
+↓
+
+Performance Measurement
+
 </div>
 
-<h3>頻出ポイント</h3>
-
-<ul>
-
-<li>WBSとOBSを結ぶ</li>
-
-<li>EVM管理単位</li>
-
-<li>Scope・Cost・Schedule統合</li>
-
-</ul>
+<p>
+Control Accountは、
+Scope・Schedule・Costを統合して
+管理するManagement Control Point。
+</p>
 
 <div class="trap">
 
 WBS Dictionaryを選ぶ。
 
-Scope Baselineを選ぶ。
+Scope Baselineだけを選ぶ。
+
+Planning Packageと混同する。
 
 </div>
 
@@ -480,17 +622,18 @@ Control Account
 
 =
 
-Integration Point.
+Scope + Schedule + Cost
+
+Integration Point
 
 </div>
 
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 11　Requirements Readiness</h2>
+<h2>Rule 11　ReadyなBacklog Item</h2>
 
 <div class="rule">
 
@@ -498,7 +641,7 @@ Clear
 
 ↓
 
-Small
+Small Enough
 
 ↓
 
@@ -510,6 +653,10 @@ Acceptance Criteria
 
 ↓
 
+Understood / Estimated
+
+↓
+
 Ready
 
 </div>
@@ -518,7 +665,9 @@ Ready
 
 Acceptance Criteriaなし。
 
-EpicのままSprintへ。
+EpicのままSprintへ入れる。
+
+説明文を増やしただけでReady。
 
 </div>
 
@@ -528,17 +677,133 @@ Ready
 
 =
 
-Testable.
+Clear
+
++
+
+Testable
+
++
+
+Actionable
 
 </div>
 
 </section>
 
 
+<section class="card">
+
+<h2>Rule 12　Validate Scope vs Control Scope</h2>
+
+<table>
+
+<tr>
+<th>Validate Scope</th>
+<th>Control Scope</th>
+</tr>
+
+<tr>
+<td>成果物のFormal Acceptance</td>
+<td>Scopeの状態をMonitor</td>
+</tr>
+
+<tr>
+<td>Customer / Sponsor Acceptance</td>
+<td>Scope Changeを管理</td>
+</tr>
+
+<tr>
+<td>Accepted Deliverables</td>
+<td>Prevent Scope Creep</td>
+</tr>
+
+</table>
+
+<div class="trap">
+
+Quality ControlとValidate Scopeを同じものと考える。
+
+Validate ScopeをScope変更管理と考える。
+
+</div>
+
+<div class="memory">
+
+Control Quality
+
+→ Correct?
+
+
+Validate Scope
+
+→ Accepted?
+
+</div>
+
+</section>
+
 
 <section class="card">
 
-<h2>Rule 12　Scope Summary</h2>
+<h2>Rule 13　Scope Creep</h2>
+
+<div class="rule">
+
+Unapproved Scope Addition
+
+=
+
+Scope Creep
+
+
+发现
+
+↓
+
+Stop / Clarify
+
+↓
+
+Impact Analysis
+
+↓
+
+Formal Change Process
+
+</div>
+
+<p>
+価値がありそうな追加機能でも、
+正式な承認なしにScopeへ追加しない。
+</p>
+
+<div class="trap">
+
+顧客が喜ぶから追加。
+
+Teamに余裕があるから追加。
+
+Sponsorが口頭で頼んだから追加。
+
+</div>
+
+<div class="memory">
+
+Good Idea
+
+≠
+
+Approved Scope
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 14　Scope Summary</h2>
 
 <div class="rule">
 
@@ -546,54 +811,90 @@ Requirements
 
 ↓
 
-Scope
+Define Scope
 
 ↓
 
-WBS
+WBS / Backlog
 
 ↓
 
-Scope Baseline
+Agree / Baseline
 
 ↓
 
-Validate Scope
+Deliver
 
 ↓
 
-Control Scope
+Validate
+
+↓
+
+Control Changes
 
 </div>
 
-<h3>あなたのFull Examで多かったミス</h3>
+<h3>試験で迷ったら</h3>
 
 <ul>
 
-<li>RTMではなくScope Statementを選ぶ</li>
+<li>PredictiveではRequirements → Scope → WBS</li>
 
-<li>WBSとWBS Dictionaryを混同する</li>
+<li>Requirement ConflictならRTM</li>
 
-<li>Control Accountを知らない</li>
+<li>Scope Baseline = Scope Statement + WBS + WBS Dictionary</li>
 
-<li>AgileでもWBSを選ぶ</li>
+<li>WBSはDeliverable-oriented</li>
 
-<li>Change Controlを飛ばす</li>
+<li>Requirement変更はImpact Analysisから</li>
+
+<li>Formal環境ではChange Controlを通す</li>
+
+<li>AgileではBacklog RefinementでScopeを詳細化する</li>
+
+<li>Control AccountはScope・Schedule・Costの統合点</li>
+
+<li>Validate ScopeはFormal Acceptance</li>
+
+<li>Scope Creepを許さない</li>
 
 </ul>
 
 <div class="memory">
 
-Scope問題は
-
 Requirements First
+
+↓
 
 Deliverable-oriented
 
-Formal Change
+↓
 
-この3つを最優先で考える。
+Formal Change
 
 </div>
 
 </section>
+
+<footer>
+
+PMP Personal Rulebook v7
+
+</footer>
+
+<div class="page-nav">
+
+<a href="06_Procurement.html">← Previous</a>
+
+<a href="08_Schedule_Cost_EVM.html">Next →</a>
+
+</div>
+
+</div>
+
+<a href="#" class="top">↑</a>
+
+</body>
+
+</html>
