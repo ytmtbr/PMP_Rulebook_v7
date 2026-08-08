@@ -1,10 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PMP Rulebook v7 - 11 Change Management</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<header>
+
+<h1>PMP Personal Rulebook v7</h1>
+
+<div class="subtitle">
+Decision Support System for PMI Study Hall
+</div>
+
+<nav>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="01_Stakeholder.html">01</a>
+
+<a href="02_Governance.html">02</a>
+
+<a href="03_Risk.html">03</a>
+
+<a href="04_Quality.html">04</a>
+
+<a href="05_Agile.html">05</a>
+
+<a href="06_Procurement.html">06</a>
+
+<a href="07_Scope_Requirements.html">07</a>
+
+<a href="08_Schedule_Cost_EVM.html">08</a>
+
+<a href="09_Team_Leadership.html">09</a>
+
+<a href="10_Communication.html">10</a>
+
+<a href="11_Change_Management.html" class="active">11</a>
+
+<a href="12_Business_Value.html">12</a>
+
+<a href="13_Integration.html">13</a>
+
+<a href="14_Process_Framework.html">14</a>
+
+<a href="15_Final_Checklist.html">15</a>
+
+</nav>
+
+</header>
+
+<h2>11 Change Management</h2>
+
+
 <section class="card">
 
-<h2>Rule 1　Change Management Flow</h2>
+<h2>Rule 1　Formal Changeの基本Flow</h2>
 
 <div class="rule">
 
-Identify Change
+Change Identified
+
+↓
+
+Understand / Assess Change
 
 ↓
 
@@ -12,19 +78,15 @@ Impact Analysis
 
 ↓
 
-Change Request
+Formal Change Request
 
 ↓
 
-Review
+Review / Decision
 
 ↓
 
-Approval
-
-↓
-
-Update Baselines
+Update Plans / Baselines
 
 ↓
 
@@ -36,11 +98,18 @@ Verify
 
 </div>
 
+<p>
+Baselineや承認済みProject Management Planへ影響する変更は、
+正式なChange Controlを通してから実装する。
+</p>
+
 <div class="trap">
 
 PMだけで変更。
 
-先に実装する。
+Sponsorが言ったから即変更。
+
+承認前に実装。
 
 </div>
 
@@ -48,93 +117,247 @@ PMだけで変更。
 
 Analyze
 
-Before
+↓
 
-Approve.
+Approve
+
+↓
+
+Update
+
+↓
+
+Implement
+
+↓
+
+Verify
 
 </div>
 
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 2　まずImpact Analysis</h2>
+<h2>Rule 2　Impact Analysis</h2>
 
 <div class="rule">
 
-Any Change
+Proposed Change
 
 ↓
 
-Analyze
+Evaluate Impact on
 
 Scope
 
++
+
 Schedule
+
++
 
 Cost
 
++
+
 Quality
+
++
 
 Risk
 
++
+
 Resources
+
++
 
 Stakeholders
 
+↓
+
+Make Informed Decision
+
 </div>
+
+<p>
+変更内容と影響が不明な状態では、
+承認・拒否・実装を決めない。
+</p>
 
 <div class="trap">
 
-すぐMeeting。
+すぐ実装。
 
-すぐChange Request。
+すぐReject。
+
+影響を確認せずSponsorへ判断を丸投げ。
 
 </div>
 
 <div class="memory">
 
-Impact Analysis
+Understand Impact
 
-comes first.
+Before Decision
 
 </div>
 
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 3　Approved Change</h2>
+<h2>Rule 3　Change Request vs Change Approval</h2>
 
 <div class="rule">
 
-Approved
+Change Request
 
 ↓
 
-Update PM Plan
+Authorized Review
 
 ↓
 
-Update Baselines
+Approve
+
+or
+
+Reject
+
+</div>
+
+<p>
+Changeを要求できる人と、
+Changeを承認できる人は同じとは限らない。
+
+承認権限はChange Management PlanやGovernanceに従う。
+</p>
+
+<div class="trap">
+
+Sponsorが要求した
+
+=
+
+自動承認。
+
+
+Customerが要求した
+
+=
+
+自動承認。
+
+</div>
+
+<div class="memory">
+
+Request
+
+≠
+
+Approval
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 4　Change Control Board</h2>
+
+<div class="rule">
+
+Change Request
 
 ↓
 
-Execute
+Impact Information
 
 ↓
 
-Verify Effectiveness
+CCB / Authorized Authority
+
+↓
+
+Approve / Reject / Defer
+
+</div>
+
+<p>
+CCBはChange RequestをReviewし、
+承認・拒否等を判断するための正式なGroup。
+
+ただし、すべてのProjectで必ずCCBが承認するとは限らない。
+承認権限はGovernanceに従う。
+</p>
+
+<div class="trap">
+
+すべてのChangeをSponsorが承認。
+
+すべてのChangeをPMが承認。
+
+すべてのProjectにCCBが必須。
+
+</div>
+
+<div class="memory">
+
+Approval Authority
+
+comes from
+
+Governance
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 5　Approved Change</h2>
+
+<div class="rule">
+
+Approved Change
+
+↓
+
+Update Relevant Plans / Baselines / Documents
+
+↓
+
+Communicate
+
+↓
+
+Implement
+
+↓
+
+Verify Implementation / Effectiveness
 
 </div>
 
 <div class="trap">
 
-承認されたから終了。
+Approved
+
+=
+
+Completed。
+
+
+Change Log更新だけで終了。
+
+Baseline更新だけで終了。
 
 </div>
 
@@ -151,14 +374,15 @@ Implementation
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 4　Corrective Action</h2>
+<h2>Rule 6　Corrective Action</h2>
 
 <div class="rule">
 
-Known Problem
+Actual Performance
+
+deviates from Plan
 
 ↓
 
@@ -166,25 +390,33 @@ Corrective Action
 
 ↓
 
-Verify
+Bring Future Performance
+
+Back in Alignment
 
 ↓
 
-Continue
+Verify Effectiveness
 
 </div>
 
+<p>
+Corrective Actionは、
+既に発生しているPerformance Deviationを修正し、
+将来のPerformanceをPlanへ戻すためのAction。
+</p>
+
 <div class="trap">
 
-Meetingだけ。
+問題をMeetingで共有して終了。
 
-延期する。
+問題をRiskとして扱うだけ。
 
 </div>
 
 <div class="memory">
 
-Known Problem
+Existing Deviation
 
 ↓
 
@@ -195,14 +427,13 @@ Correct
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 5　Preventive Action</h2>
+<h2>Rule 7　Preventive Action</h2>
 
 <div class="rule">
 
-Potential Future Problem
+Potential Future Deviation
 
 ↓
 
@@ -212,17 +443,19 @@ Preventive Action
 
 Reduce Probability
 
+of Future Nonperformance
+
 </div>
 
 <div class="trap">
 
-既に起きた問題にもPreventiveを選ぶ。
+既に発生したDefectをPreventive Actionだけで処理。
 
 </div>
 
 <div class="memory">
 
-Future
+Future Problem
 
 ↓
 
@@ -233,10 +466,9 @@ Prevent
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 6　Defect Repair</h2>
+<h2>Rule 8　Defect Repair</h2>
 
 <div class="rule">
 
@@ -244,11 +476,15 @@ Defect Found
 
 ↓
 
-Repair
+Repair / Rework
 
 ↓
 
-Retest
+Retest / Inspect
+
+↓
+
+Verify Requirements
 
 ↓
 
@@ -258,9 +494,9 @@ Accept
 
 <div class="trap">
 
-Warrantyで直す。
+ReleaseしてWarrantyで修正。
 
-Release優先。
+修正したからRetest不要。
 
 </div>
 
@@ -268,19 +504,82 @@ Release優先。
 
 Fix
 
-Before Release.
+↓
+
+Retest
+
+↓
+
+Verify
 
 </div>
 
 </section>
 
+
 <section class="card">
 
-<h2>Rule 7　Rebaseline</h2>
+<h2>Rule 9　Corrective / Preventive / Defect RepairとChange Control</h2>
 
 <div class="rule">
 
-Major Approved Change
+Corrective Action
+
+or
+
+Preventive Action
+
+or
+
+Defect Repair
+
+↓
+
+Does it Require Change
+
+to Approved Plan / Baseline?
+
+↓
+
+YES
+
+→ Formal Change Control
+
+
+NO
+
+→ Execute within Existing Authority / Process
+
+</div>
+
+<div class="trap">
+
+すべてのCorrective Actionに必ずCCB承認。
+
+逆に、Baselineへ影響しても非公式に実行。
+
+</div>
+
+<div class="memory">
+
+Baseline Impact?
+
+↓
+
+Formal Change
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 10　Rebaselining</h2>
+
+<div class="rule">
+
+Significant Approved Change
 
 ↓
 
@@ -292,35 +591,82 @@ Governance Approval
 
 ↓
 
-Update Baselines
+Update Relevant Baseline
+
+↓
+
+Use New Baseline for Control
 
 </div>
 
+<p>
+BaselineはPerformanceが悪化したから書き換えるものではない。
+
+承認されたScope・Schedule・Cost等の変更を
+反映するときに正式に更新する。
+</p>
+
 <div class="trap">
 
-PMだけでBaseline変更。
+遅延した
+
+→ Schedule Baselineを実績に合わせる。
+
+
+Cost Overrun
+
+→ Cost Baselineを上げる。
 
 </div>
 
 <div class="memory">
 
-Rebaseline
+Poor Performance
 
-requires approval.
+≠
+
+Rebaseline
 
 </div>
 
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 8　Organizational Change</h2>
+<h2>Rule 11　Risk vs Issue vs Change</h2>
+
+<table>
+
+<tr>
+<th>Situation</th>
+<th>Manage As</th>
+</tr>
+
+<tr>
+<td>将来起こるかもしれない</td>
+<td>Risk</td>
+</tr>
+
+<tr>
+<td>既に発生した問題</td>
+<td>Issue</td>
+</tr>
+
+<tr>
+<td>Approved Scope / Plan等を変える必要</td>
+<td>Change</td>
+</tr>
+
+</table>
 
 <div class="rule">
 
-Business Change
+Risk Occurs
+
+↓
+
+Issue
 
 ↓
 
@@ -328,37 +674,155 @@ Assess Impact
 
 ↓
 
-Communicate
-
-↓
-
-Adjust Project
+Change Request if Plan / Baseline Must Change
 
 </div>
 
 <div class="trap">
 
-Risk Registerだけ更新。
+既に起きた出来事をRiskとして登録して終わる。
+
+Issueが発生したら必ずBaseline変更。
 
 </div>
 
 <div class="memory">
 
-Business Change
+Future
 
-↓
+→ Risk
 
-Project Change.
+
+Happened
+
+→ Issue
+
+
+Plan Must Change
+
+→ Change
 
 </div>
 
 </section>
 
 
+<section class="card">
+
+<h2>Rule 12　Organizational / External Change</h2>
+
+<div class="rule">
+
+Organizational / Market / Regulatory Change
+
+↓
+
+Understand New Conditions
+
+↓
+
+Assess Project Impact
+
+↓
+
+Determine Required Response
+
+↓
+
+Formal Change if Needed
+
+↓
+
+Update / Communicate / Implement
+
+</div>
+
+<p>
+組織再編、予算削減、規制変更などが既に発生した場合、
+それ自体を「将来Risk」として扱うだけでは不十分。
+
+Projectへの実際のImpactを評価する。
+</p>
+
+<div class="trap">
+
+Risk Registerだけ更新。
+
+自動的にScheduleを延長。
+
+PMだけでScopeを削減。
+
+</div>
+
+<div class="memory">
+
+External Change
+
+↓
+
+Assess Actual Impact
+
+</div>
+
+</section>
+
 
 <section class="card">
 
-<h2>Rule 9　ADKAR</h2>
+<h2>Rule 13　Change Impact Assessment（CIA）</h2>
+
+<div class="rule">
+
+Organizational Change
+
+↓
+
+Change Impact Assessment
+
+↓
+
+Who / What is Affected?
+
+↓
+
+Impact Matrix
+
+↓
+
+Required Actions
+
+</div>
+
+<p>
+CIAは組織変更が
+Process・Role・Operation・People等へ
+どのようなImpactを与えるか評価する。
+</p>
+
+<div class="trap">
+
+組織変更のImpactを調べる問題で
+
+ADKARを最初に選ぶ。
+
+</div>
+
+<div class="memory">
+
+CIA
+
+=
+
+What Will Change?
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 14　ADKAR</h2>
 
 <table>
 
@@ -394,83 +858,160 @@ Project Change.
 
 </table>
 
+<p>
+ADKARは、
+個人がOrganizational Changeを受け入れ、
+実際に新しい行動へ移行するためのChange Model。
+</p>
+
 <div class="trap">
 
-Impact Analysisの代わりに使う。
+Project Impact Analysisの代わりにADKAR。
+
+Scope / Schedule / Cost ImpactをADKARで分析。
 
 </div>
 
 <div class="memory">
+
+CIA
+
+→ Impact
+
 
 ADKAR
 
-=
-
-People Change
+→ People Adoption
 
 </div>
 
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 10　Change Impact Assessment</h2>
+<h2>Rule 15　AgileのChange</h2>
 
 <div class="rule">
 
-Organizational Change
+New Need / Feedback
 
 ↓
 
-CIA
+Product Owner
 
 ↓
 
-Impact Matrix
+Backlog Refinement / Reprioritization
 
 ↓
 
-Response
+Future Sprint
 
 </div>
 
+<p>
+Agileでは変化を受け入れるが、
+「何でもSprint途中で自由に変更する」という意味ではない。
+
+Product Backlogの変更・優先順位付けはPOを中心に行い、
+Sprint Goalを保護する。
+</p>
+
 <div class="trap">
 
-ADKARを最初に選ぶ。
+Agile
+
+=
+
+Formal Process不要。
+
+
+Stakeholder要求
+
+→ Sprint中に即実装。
 
 </div>
 
 <div class="memory">
 
-CIA
+Agile Welcomes Change
 
-=
-
-Impact First.
+but Protects Sprint Goal
 
 </div>
 
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 11　Integrated Change Control</h2>
+<h2>Rule 16　HybridのChange</h2>
 
 <div class="rule">
 
-Evaluate
+Adaptive Delivery
+
++
+
+Predictive Governance
 
 ↓
 
-Approve / Reject
+Backlog Adaptation
+
+where Appropriate
+
++
+
+Formal Control
+
+for Baseline Changes
+
+</div>
+
+<div class="trap">
+
+HybridだからすべてChange Request。
+
+HybridだからすべてBacklogだけで処理。
+
+</div>
+
+<div class="memory">
+
+Adapt Delivery
+
+Preserve Governance
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 17　Change Management Summary</h2>
+
+<div class="rule">
+
+Identify / Understand
 
 ↓
 
-Update Documents
+Impact Analysis
+
+↓
+
+Formal Request if Required
+
+↓
+
+Authorized Approval
+
+↓
+
+Update Plans / Baselines
 
 ↓
 
@@ -480,47 +1021,49 @@ Communicate
 
 Implement
 
-</div>
+↓
 
-<div class="trap">
-
-変更だけ実装。
-
-文書更新しない。
+Verify
 
 </div>
+
+<h3>試験で迷ったら</h3>
+
+<ul>
+
+<li>変更内容を理解せず即実装しない</li>
+
+<li>Baselineへ影響するならImpact Analysis → Formal Change</li>
+
+<li>Change Request ≠ Approval</li>
+
+<li>承認者はGovernance / Change Management Planで決まる</li>
+
+<li>Approved ≠ Implemented</li>
+
+<li>承認後はPlan・Baseline・Documentを更新する</li>
+
+<li>実装後はEffectivenessを確認する</li>
+
+<li>Performance悪化だけでRebaselineしない</li>
+
+<li>Future = Risk、Happened = Issue、Plan変更 = Change</li>
+
+<li>CIA = Organizational Impact</li>
+
+<li>ADKAR = People Adoption</li>
+
+<li>AgileでもSprint Goalを保護する</li>
+
+</ul>
 
 <div class="memory">
 
-Every Approved Change
-
-updates the project.
-
-</div>
-
-</section>
-
-
-
-<section class="card">
-
-<h2>Rule 12　Change Management Summary</h2>
-
-<div class="rule">
-
-Identify
+Analyze
 
 ↓
 
-Impact Analysis
-
-↓
-
-Formal Change
-
-↓
-
-Approval
+Approve
 
 ↓
 
@@ -536,34 +1079,26 @@ Verify
 
 </div>
 
-<h3>あなたのFull Examで多かったミス</h3>
+</section>
 
-<ul>
+<footer>
 
-<li>Impact Analysisを飛ばす</li>
+PMP Personal Rulebook v7
 
-<li>Meetingを選ぶ</li>
+</footer>
 
-<li>Risk Registerだけ更新する</li>
+<div class="page-nav">
 
-<li>承認後の実装確認を忘れる</li>
+<a href="10_Communication.html">← Previous</a>
 
-<li>Baseline更新を忘れる</li>
-
-</ul>
-
-<div class="memory">
-
-Change問題は
-
-Impact Analysis
-
-Formal Approval
-
-Baseline Update
-
-この3つでほぼ解ける。
+<a href="12_Business_Value.html">Next →</a>
 
 </div>
 
-</section>
+</div>
+
+<a href="#" class="top">↑</a>
+
+</body>
+
+</html>
