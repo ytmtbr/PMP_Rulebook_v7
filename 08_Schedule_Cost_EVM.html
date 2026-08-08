@@ -1,8 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PMP Rulebook v7 - 08 Schedule / Cost / EVM</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<header>
+
+<h1>PMP Personal Rulebook v7</h1>
+
+<div class="subtitle">
+Decision Support System for PMI Study Hall
+</div>
+
+<nav>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="01_Stakeholder.html">01</a>
+
+<a href="02_Governance.html">02</a>
+
+<a href="03_Risk.html">03</a>
+
+<a href="04_Quality.html">04</a>
+
+<a href="05_Agile.html">05</a>
+
+<a href="06_Procurement.html">06</a>
+
+<a href="07_Scope_Requirements.html">07</a>
+
+<a href="08_Schedule_Cost_EVM.html" class="active">08</a>
+
+<a href="09_Team_Leadership.html">09</a>
+
+<a href="10_Communication.html">10</a>
+
+<a href="11_Change_Management.html">11</a>
+
+<a href="12_Business_Value.html">12</a>
+
+<a href="13_Integration.html">13</a>
+
+<a href="14_Process_Framework.html">14</a>
+
+<a href="15_Final_Checklist.html">15</a>
+
+</nav>
+
+</header>
+
+<h2>08 Schedule / Cost / EVM</h2>
+
+
 <section class="card">
 
-<h2>Rule 1　Schedule Management Flow</h2>
+<h2>Rule 1　Schedule Planning Flow</h2>
 
 <div class="rule">
+
+WBS / Work Packages
+
+↓
 
 Define Activities
 
@@ -12,15 +78,15 @@ Sequence Activities
 
 ↓
 
-Estimate Resources
-
-↓
-
-Estimate Duration
+Estimate Resources / Durations
 
 ↓
 
 Develop Schedule
+
+↓
+
+Schedule Baseline
 
 ↓
 
@@ -32,181 +98,19 @@ Control Schedule
 
 WBSの次にいきなりScheduleを作る。
 
-Durationから考える。
+Durationだけ先に考える。
 
 </div>
 
 <div class="memory">
 
-Activities First.
-
-</div>
-
-</section>
-
-
-
-<section class="card">
-
-<h2>Rule 2　Critical Path</h2>
-
-<div class="rule">
-
-Longest Path
+Work Packages
 
 ↓
 
-Zero Float
+Activities
 
 ↓
-
-Determines Project Duration
-
-</div>
-
-<div class="trap">
-
-一番難しい作業。
-
-一番コストが高い作業。
-
-を選ぶ。
-
-</div>
-
-<div class="memory">
-
-Longest Path
-
-wins.
-
-</div>
-
-</section>
-
-
-
-<section class="card">
-
-<h2>Rule 3　Float</h2>
-
-<div class="rule">
-
-Total Float
-
-=
-
-LS−ES
-
-=
-
-LF−EF
-
-</div>
-
-<table>
-
-<tr>
-
-<th>Float</th>
-
-<th>意味</th>
-
-</tr>
-
-<tr>
-
-<td>0</td>
-
-<td>Critical Path</td>
-
-</tr>
-
-<tr>
-
-<td>Positive</td>
-
-<td>余裕あり</td>
-
-</tr>
-
-<tr>
-
-<td>Negative</td>
-
-<td>遅延状態</td>
-
-</tr>
-
-</table>
-
-<div class="trap">
-
-Critical PathにもFloatがある。
-
-</div>
-
-<div class="memory">
-
-Critical
-
-=
-
-Zero Float
-
-</div>
-
-</section>
-
-
-
-<section class="card">
-
-<h2>Rule 4　EVM公式</h2>
-
-<div class="rule">
-
-CV
-
-=
-
-EV−AC
-
-SPI
-
-=
-
-EV÷PV
-
-CPI
-
-=
-
-EV÷AC
-
-SV
-
-=
-
-EV−PV
-
-</div>
-
-<div class="trap">
-
-EVとPVを逆にする。
-
-CVをAC−EVにする。
-
-</div>
-
-<div class="memory">
-
-CV
-
-Cost
-
-SPI
 
 Schedule
 
@@ -215,206 +119,523 @@ Schedule
 </section>
 
 
+<section class="card">
+
+<h2>Rule 2　Critical Path</h2>
+
+<div class="rule">
+
+Network Paths
+
+↓
+
+Calculate Duration / Float
+
+↓
+
+Longest Path
+
+↓
+
+Critical Path
+
+↓
+
+Determines Project Duration
+
+</div>
+
+<p>
+Critical Pathは通常、
+Projectの最短完了期間を決める最長経路。
+</p>
+
+<div class="trap">
+
+一番難しいActivity。
+
+一番Costが高いActivity。
+
+Activity数が一番多いPath。
+
+</div>
+
+<div class="memory">
+
+Critical Path
+
+=
+
+Longest Duration Path
+
+</div>
+
+</section>
+
 
 <section class="card">
 
-<h2>Rule 5　EVM判断</h2>
+<h2>Rule 3　Total Float</h2>
+
+<div class="rule">
+
+Total Float
+
+=
+
+LS − ES
+
+=
+
+LF − EF
+
+</div>
+
+<p>
+一般的なPMP計算問題では、
+Critical PathのTotal Floatは0。
+</p>
+
+<div class="trap">
+
+Critical Pathには必ず余裕がある。
+
+Free FloatとTotal Floatを混同する。
+
+</div>
+
+<div class="memory">
+
+Critical
+
+→
+
+Usually Zero Float
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 4　EVM基本4式</h2>
 
 <table>
 
 <tr>
-
 <th>指標</th>
-
+<th>式</th>
 <th>意味</th>
-
 </tr>
 
 <tr>
-
-<td>CV ＞0</td>
-
-<td>予算より良い</td>
-
+<td>CV</td>
+<td>EV − AC</td>
+<td>Cost Variance</td>
 </tr>
 
 <tr>
-
-<td>CV ＜0</td>
-
-<td>予算超過</td>
-
+<td>SV</td>
+<td>EV − PV</td>
+<td>Schedule Variance</td>
 </tr>
 
 <tr>
-
-<td>SPI ＞1</td>
-
-<td>予定より早い</td>
-
+<td>CPI</td>
+<td>EV ÷ AC</td>
+<td>Cost Efficiency</td>
 </tr>
 
 <tr>
-
-<td>SPI ＜1</td>
-
-<td>遅れている</td>
-
-</tr>
-
-<tr>
-
-<td>CPI ＞1</td>
-
-<td>コスト効率良い</td>
-
-</tr>
-
-<tr>
-
-<td>CPI ＜1</td>
-
-<td>コスト効率悪い</td>
-
+<td>SPI</td>
+<td>EV ÷ PV</td>
+<td>Schedule Efficiency</td>
 </tr>
 
 </table>
 
 <div class="trap">
 
-SPI0.6を
+CV = AC − EV。
 
-「60%完了」
+SPI = PV ÷ EV。
 
-と読む。
+CPIとSPIを逆にする。
 
 </div>
 
 <div class="memory">
 
-SPI
+Cost
 
-=
+→ AC
 
-Schedule Efficiency
+
+Schedule
+
+→ PV
+
+
+Both compare with EV
 
 </div>
 
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 6　Reserve</h2>
+<h2>Rule 5　CV / SVの読み方</h2>
 
 <div class="rule">
 
-Known Risk
+CV &gt; 0
 
-↓
+→ Under Budget
 
-Contingency Reserve
 
-----------------
+CV &lt; 0
 
-Unknown Risk
+→ Over Budget
 
-↓
 
-Management Reserve
+SV &gt; 0
+
+→ Ahead of Schedule
+
+
+SV &lt; 0
+
+→ Behind Schedule
 
 </div>
 
 <div class="trap">
 
-全部Contingency。
+Varianceがマイナスだから良い。
+
+CVとSVの意味を逆にする。
 
 </div>
 
 <div class="memory">
 
-Known
-
-↓
-
-Contingency
-
-</div>
-
-</section>
-<section class="card">
-
-<h2>Rule 7　Reserve Analysis</h2>
-
-<div class="rule">
-
-Project Risks
-
-↓
-
-Reserve Analysis
-
-↓
-
-Enough Reserve?
-
-↓
-
-Adjust if Needed
-
-</div>
-
-<div class="trap">
-
-Root Cause Analysis。
-
-Sensitivity Analysis。
-
-</div>
-
-<div class="memory">
-
-Reserve Analysis
+Positive
 
 =
 
-予備費確認
+Good
 
 </div>
 
 </section>
 
 
+<section class="card">
+
+<h2>Rule 6　CPI / SPIの読み方</h2>
+
+<div class="rule">
+
+CPI &gt; 1
+
+→ Cost Efficient
+
+
+CPI &lt; 1
+
+→ Cost Inefficient
+
+
+SPI &gt; 1
+
+→ Ahead
+
+
+SPI &lt; 1
+
+→ Behind
+
+</div>
+
+<p>
+SPI = 0.6は
+「60%完成した」という意味ではない。
+
+予定に対するSchedule Efficiencyが0.6という意味。
+</p>
+
+<div class="trap">
+
+SPI 0.6
+
+=
+
+60% Complete
+
+</div>
+
+<div class="memory">
+
+Index
+
+&gt; 1 Good
+
+&lt; 1 Bad
+
+</div>
+
+</section>
+
 
 <section class="card">
 
-<h2>Rule 8　Schedule Compression</h2>
+<h2>Rule 7　EAC / ETC / VAC</h2>
+
+<div class="rule">
+
+EAC
+
+=
+
+Expected Total Cost
+
+
+ETC
+
+=
+
+Cost Needed to Finish
+
+
+VAC
+
+=
+
+BAC − EAC
+
+</div>
 
 <table>
 
 <tr>
+<th>Situation</th>
+<th>Typical Formula</th>
+</tr>
 
+<tr>
+<td>Current cost performance continues</td>
+<td>EAC = BAC ÷ CPI</td>
+</tr>
+
+<tr>
+<td>Past variance was exceptional</td>
+<td>EAC = AC + (BAC − EV)</td>
+</tr>
+
+<tr>
+<td>Cost and schedule both affect remaining work</td>
+<td>EAC = AC + (BAC − EV) ÷ (CPI × SPI)</td>
+</tr>
+
+</table>
+
+<div class="trap">
+
+どのEAC問題でも同じFormulaを使う。
+
+</div>
+
+<div class="memory">
+
+Read the Assumption
+
+Before Choosing EAC
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 8　Contingency vs Management Reserve</h2>
+
+<table>
+
+<tr>
+<th>Reserve</th>
+<th>Purpose</th>
+</tr>
+
+<tr>
+<td>Contingency Reserve</td>
+<td>Identified / Known Risks</td>
+</tr>
+
+<tr>
+<td>Management Reserve</td>
+<td>Unforeseen Work within Project Scope / Unknown-unknowns</td>
+</tr>
+
+</table>
+
+<div class="trap">
+
+すべてのRiskをContingency Reserveで処理。
+
+Management ReserveをCost Baselineに含める。
+
+</div>
+
+<div class="memory">
+
+Known Risk
+
+→ Contingency
+
+
+Unknown
+
+→ Management Reserve
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 9　Reserve Analysis</h2>
+
+<div class="rule">
+
+Identified Risks
+
+↓
+
+Current Exposure
+
+↓
+
+Available Reserve
+
+↓
+
+Reserve Analysis
+
+↓
+
+Enough?
+
+</div>
+
+<p>
+Reserve Analysisは、
+現在のRisk Exposureに対して
+Contingency Reserve等が十分かを評価する。
+</p>
+
+<div class="trap">
+
+Root Cause Analysisを選ぶ。
+
+Sensitivity Analysisを選ぶ。
+
+Probability × Impact Matrixを選ぶ。
+
+</div>
+
+<div class="memory">
+
+Reserve Analysis
+
+=
+
+Is the Reserve Enough?
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 10　Sensitivity Analysisとの違い</h2>
+
+<div class="rule">
+
+Sensitivity Analysis
+
+↓
+
+Which Variable / Risk
+
+has the Greatest Impact?
+
+</div>
+
+<p>
+Sensitivity Analysisは、
+どのRiskやVariableがProject Outcomeへ
+最も大きな影響を与えるかを見る。
+
+Tornado Diagramが代表的。
+</p>
+
+<div class="trap">
+
+「Contingency Fundingはいくら必要？」
+
+でSensitivity Analysisを選ぶ。
+
+</div>
+
+<div class="memory">
+
+Sensitivity
+
+=
+
+Biggest Driver
+
+
+Reserve Analysis
+
+=
+
+Enough Reserve?
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 11　Schedule Compression</h2>
+
+<table>
+
+<tr>
 <th>Fast Tracking</th>
-
 <th>Crashing</th>
-
 </tr>
 
 <tr>
-
-<td>並行実施</td>
-
-<td>人や費用追加</td>
-
+<td>ActivitiesをParallel化</td>
+<td>Resourcesを追加</td>
 </tr>
 
 <tr>
+<td>Risk ↑</td>
+<td>Cost ↑</td>
+</tr>
 
-<td>Risk↑</td>
-
-<td>Cost↑</td>
-
+<tr>
+<td>通常Sequentialな作業をOverlap</td>
+<td>Critical PathへResources投入</td>
 </tr>
 
 </table>
@@ -425,9 +646,14 @@ Fast Tracking
 
 =
 
-人追加
+人員追加。
 
-と考える。
+
+Crashing
+
+=
+
+並行作業。
 
 </div>
 
@@ -439,39 +665,94 @@ Fast
 
 Parallel
 
+
 Crash
 
 =
 
-More Resources
+Cost / Resources
 
 </div>
 
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 9　Milestone</h2>
+<h2>Rule 12　CompressionはCritical Pathを見る</h2>
 
 <div class="rule">
 
-Zero Duration
+Need Shorter Schedule
 
 ↓
 
-Important Event
+Identify Critical Path
 
 ↓
 
-Decision Point
+Evaluate Critical Activities
+
+↓
+
+Fast Track / Crash
+
+↓
+
+Recalculate Schedule
 
 </div>
 
+<p>
+Non-critical Activityを短縮しても、
+Project Completion Dateが短縮されないことがある。
+</p>
+
 <div class="trap">
 
-MilestoneにDurationを書く。
+適当なActivityへ人員追加。
+
+最も遅れているActivityだけを見る。
+
+</div>
+
+<div class="memory">
+
+Compress
+
+the Critical Path
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 13　Milestone</h2>
+
+<div class="rule">
+
+Important Event
+
+or
+
+Decision Point
+
+↓
+
+Zero Duration
+
+</div>
+
+<p>
+Milestoneは重要な到達点を表し、
+Durationは0。
+</p>
+
+<div class="trap">
+
+Milestoneに作業期間を設定する。
 
 </div>
 
@@ -481,17 +762,16 @@ Milestone
 
 =
 
-0 days
+0 Days
 
 </div>
 
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 10　Burndown Chart</h2>
+<h2>Rule 14　Burndown Chart</h2>
 
 <div class="rule">
 
@@ -499,25 +779,30 @@ Remaining Work
 
 ↓
 
-Ideal Lineと比較
+Compare with Ideal / Expected Line
+
+
+Actual Remaining
+
+&gt;
+
+Expected Remaining
+
+↓
+
+Behind
 
 </div>
 
 <div class="trap">
 
-線が高い
-
-↓
-
-進んでいる
-
-と読む。
+線が高いほどProgressが良い。
 
 </div>
 
 <div class="memory">
 
-Higher Remaining
+Higher Remaining Work
 
 =
 
@@ -528,18 +813,21 @@ Behind
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 11　Schedule Baseline変更</h2>
+<h2>Rule 15　Schedule / Cost Baseline変更</h2>
 
 <div class="rule">
+
+Need Baseline Change
+
+↓
 
 Impact Analysis
 
 ↓
 
-Formal Change
+Formal Change Request
 
 ↓
 
@@ -549,11 +837,70 @@ Approval
 
 Update Baseline
 
+↓
+
+Communicate / Implement
+
 </div>
 
 <div class="trap">
 
-PM判断だけで変更。
+PM判断だけでBaseline変更。
+
+実績が悪いからBaselineを実績に合わせる。
+
+Sponsorの口頭指示だけで変更。
+
+</div>
+
+<div class="memory">
+
+Bad Performance
+
+≠
+
+Reason to Rewrite Baseline
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 16　Forecast vs Baseline</h2>
+
+<div class="rule">
+
+Baseline
+
+=
+
+Approved Reference
+
+
+Actual Performance
+
+↓
+
+Analyze
+
+↓
+
+Forecast Future Outcome
+
+</div>
+
+<p>
+Performanceが悪化した場合、
+まずForecastを更新して将来を予測する。
+
+Baselineは単なる最新予測ではない。
+</p>
+
+<div class="trap">
+
+遅延したらBaselineを現在値へ変更する。
 
 </div>
 
@@ -561,25 +908,37 @@ PM判断だけで変更。
 
 Baseline
 
-needs approval.
+=
+
+Approved Target
+
+
+Forecast
+
+=
+
+Expected Outcome
 
 </div>
 
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 12　Schedule / Cost Summary</h2>
+<h2>Rule 17　Schedule / Cost Summary</h2>
 
 <div class="rule">
+
+Scope / WBS
+
+↓
 
 Activities
 
 ↓
 
-Schedule
+Schedule + Cost
 
 ↓
 
@@ -587,46 +946,98 @@ Baseline
 
 ↓
 
-Monitor
+Monitor Actual Performance
 
 ↓
 
-EVM
+EVM / Variance
 
 ↓
 
 Forecast
 
+↓
+
+Corrective Action
+
+↓
+
+Formal Change if Needed
+
 </div>
 
-<h3>あなたのFull Examで多かったミス</h3>
+<h3>試験で迷ったら</h3>
 
 <ul>
 
-<li>SPI計算</li>
+<li>Critical Path = Project Durationを決める最長経路</li>
 
-<li>CV計算</li>
+<li>Critical Pathは通常Zero Float</li>
 
-<li>Reserve Analysis</li>
+<li>CV = EV − AC</li>
 
-<li>Burndownの読み方</li>
+<li>SV = EV − PV</li>
 
-<li>Critical Path</li>
+<li>CPI = EV ÷ AC</li>
+
+<li>SPI = EV ÷ PV</li>
+
+<li>Indexは1より大きければGood</li>
+
+<li>VarianceはプラスならGood</li>
+
+<li>Reserve Analysis = Reserveは十分か</li>
+
+<li>Sensitivity Analysis = 最大Impact Driverは何か</li>
+
+<li>Fast Tracking = Parallel</li>
+
+<li>Crashing = Resources / Cost</li>
+
+<li>Baseline変更にはFormal Approval</li>
+
+<li>Performance悪化だけでBaselineを書き換えない</li>
 
 </ul>
 
 <div class="memory">
 
-Schedule問題は
-
 Formula
 
-Baseline
+↓
+
+Interpret
+
+↓
+
+Forecast
+
+↓
 
 Formal Change
-
-これだけでかなり解ける。
 
 </div>
 
 </section>
+
+<footer>
+
+PMP Personal Rulebook v7
+
+</footer>
+
+<div class="page-nav">
+
+<a href="07_Scope_Requirements.html">← Previous</a>
+
+<a href="09_Team_Leadership.html">Next →</a>
+
+</div>
+
+</div>
+
+<a href="#" class="top">↑</a>
+
+</body>
+
+</html>
