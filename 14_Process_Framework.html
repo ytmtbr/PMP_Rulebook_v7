@@ -1,6 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PMP Rulebook v7 - 14 Process Framework</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<header>
+
+<h1>PMP Personal Rulebook v7</h1>
+
+<div class="subtitle">
+Decision Support System for PMI Study Hall
+</div>
+
+<nav>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="01_Stakeholder.html">01</a>
+
+<a href="02_Governance.html">02</a>
+
+<a href="03_Risk.html">03</a>
+
+<a href="04_Quality.html">04</a>
+
+<a href="05_Agile.html">05</a>
+
+<a href="06_Procurement.html">06</a>
+
+<a href="07_Scope_Requirements.html">07</a>
+
+<a href="08_Schedule_Cost_EVM.html">08</a>
+
+<a href="09_Team_Leadership.html">09</a>
+
+<a href="10_Communication.html">10</a>
+
+<a href="11_Change_Management.html">11</a>
+
+<a href="12_Business_Value.html">12</a>
+
+<a href="13_Integration.html">13</a>
+
+<a href="14_Process_Framework.html" class="active">14</a>
+
+<a href="15_Final_Checklist.html">15</a>
+
+</nav>
+
+</header>
+
+<h2>14 Process Framework</h2>
+
+
 <section class="card">
 
-<h2>Rule 1　PMI Process Framework</h2>
+<h2>Rule 1　5 Process Groups</h2>
 
 <div class="rule">
 
@@ -14,7 +76,7 @@ Planning
 
 Executing
 
-↓
+↕︎
 
 Monitoring & Controlling
 
@@ -24,9 +86,20 @@ Closing
 
 </div>
 
+<p>
+5 Process Groupsは単純なProject Phaseではない。
+
+特にExecutingとMonitoring & Controllingは
+Project中に並行・反復して行われる。
+</p>
+
 <div class="trap">
 
-Planningの後にClosing。
+Planningが完全終了してからMonitoring開始。
+
+Executing完了後にMonitoring。
+
+Process Group = Project Phase。
 
 </div>
 
@@ -36,9 +109,7 @@ I
 
 P
 
-E
-
-M&C
+E ↔ M&C
 
 C
 
@@ -47,42 +118,91 @@ C
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 2　問題を解く順番</h2>
+<h2>Rule 2　Process GroupとProject Phaseを混同しない</h2>
 
 <div class="rule">
 
-① 何フェーズか？
+Process Groups
+
+=
+
+How Project Management Work Is Performed
+
+
+Project Phases
+
+=
+
+How Project / Product Work Is Organized
+
+</div>
+
+<p>
+Design PhaseやConstruction Phaseなどの各Phaseの中でも、
+Planning・Executing・Monitoringなどが行われ得る。
+</p>
+
+<div class="trap">
+
+Initiating
+
+=
+
+必ずProject最初のPhase。
+
+
+Closing
+
+=
+
+Project全体の最後だけ。
+
+</div>
+
+<div class="memory">
+
+Process Group
+
+≠
+
+Project Phase
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 3　問題を読むときの4ステップ</h2>
+
+<div class="rule">
+
+① What is happening?
 
 ↓
 
-② 何Knowledge Areaか？
+② Predictive / Agile / Hybrid?
 
 ↓
 
-③ 問題は
-
-Plan
-
-Execute
-
-Monitor
-
-Close
-
-のどれか？
+③ Risk / Issue / Change / Conflict / Requirement?
 
 ↓
 
-④ 最もPMらしい行動を選ぶ
+④ What is the FIRST / NEXT appropriate action?
 
 </div>
 
 <div class="trap">
 
-単語だけ見て答える。
+Keywordだけ見てToolを選ぶ。
+
+選択肢から先に読む。
+
+状況を分類せず暗記ルールだけ適用。
 
 </div>
 
@@ -90,23 +210,76 @@ Close
 
 Context
 
-before
+Before
 
-Answer.
+Answer
 
 </div>
 
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 3　PMIの基本思想</h2>
+<h2>Rule 4　FIRST / NEXT問題</h2>
 
 <div class="rule">
 
-Understand
+FIRST
+
+=
+
+What must happen before the other actions?
+
+
+NEXT
+
+=
+
+Given what has already happened,
+what is the next logical action?
+
+</div>
+
+<p>
+正しいActionが複数あっても、
+順番が違えば不正解になる。
+
+問題文で「既に何が済んでいるか」を確認する。
+</p>
+
+<div class="trap">
+
+最終的に必要なActionをFIRSTで選ぶ。
+
+既に実施済みのAnalysisをもう一度選ぶ。
+
+</div>
+
+<div class="memory">
+
+Correct Action
+
++
+
+Correct Sequence
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 5　基本Decision Flow</h2>
+
+<div class="rule">
+
+Understand Situation
+
+↓
+
+Gather / Review Relevant Information
 
 ↓
 
@@ -114,7 +287,7 @@ Analyze
 
 ↓
 
-Collaborate
+Collaborate if Needed
 
 ↓
 
@@ -122,275 +295,414 @@ Decide
 
 ↓
 
-Document
+Act through Appropriate Process
 
 ↓
 
-Monitor
+Monitor Result
 
 </div>
 
 <div class="trap">
 
-Escalate
+UnderstandせずAction。
 
-Command
+AnalyzeせずDecision。
 
-Punish
+実施してMonitorしない。
 
 </div>
 
 <div class="memory">
 
-PMI
+Understand
 
-likes
+↓
 
-collaboration.
+Analyze
+
+↓
+
+Act
+
+↓
+
+Verify
 
 </div>
 
 </section>
 
 
+<section class="card">
+
+<h2>Rule 6　「まずAnalyze」は強いが絶対ではない</h2>
+
+<div class="rule">
+
+Unknown Cause / Impact
+
+↓
+
+Analyze First
+
+
+Already Analyzed
+
+↓
+
+Do Not Analyze Again
+
+
+Immediate Safety / Compliance Threat
+
+↓
+
+Protect / Correct Immediately
+
+
+Clear Existing Problem within Authority
+
+↓
+
+Take Appropriate Action
+
+</div>
+
+<p>
+「何でもImpact Analysis」は危険。
+
+問題文ですでに原因・Impact・対応方針が明確なら、
+次のProcessへ進む。
+</p>
+
+<div class="trap">
+
+すべての問題
+
+→ Analyze。
+
+
+明確なDefect
+
+→ さらに原因分析だけして修正しない。
+
+</div>
+
+<div class="memory">
+
+Analyze
+
+when information
+
+is missing
+
+</div>
+
+</section>
+
 
 <section class="card">
 
-<h2>Rule 4　まず最初にやること</h2>
+<h2>Rule 7　Risk / Issue / Changeを最初に分類</h2>
 
 <table>
 
 <tr>
-<th>状況</th>
-<th>First Action</th>
+<th>Situation</th>
+<th>Think</th>
 </tr>
 
 <tr>
-<td>情報不足</td>
-<td>Understand</td>
+<td>将来起こるかもしれない</td>
+<td>Risk</td>
 </tr>
 
 <tr>
-<td>新しい要求</td>
-<td>Impact Analysis</td>
+<td>既に起きている</td>
+<td>Issue</td>
 </tr>
 
 <tr>
-<td>対立</td>
-<td>Clarify</td>
-</tr>
-
-<tr>
-<td>品質問題</td>
-<td>Correct</td>
-</tr>
-
-<tr>
-<td>リスク</td>
-<td>Analyze</td>
-</tr>
-
-<tr>
-<td>変更</td>
-<td>Formal Change</td>
+<td>Approved Plan / Baselineを変える</td>
+<td>Change</td>
 </tr>
 
 </table>
 
-<div class="memory">
-
-Never jump
-
-to implementation.
-
-</div>
-
-</section>
-
-
-
-<section class="card">
-
-<h2>Rule 5　「最初に何をする？」問題</h2>
-
 <div class="rule">
 
-Don't Act
+Risk
 
-↓
+→ Analyze / Response / Monitor
 
-Understand
 
-↓
+Issue
 
-Analyze
+→ Resolve / Track
 
-↓
 
-Then Act
+Change
+
+→ Impact / Approval / Update / Implement
 
 </div>
 
 <div class="trap">
 
-すぐMeeting。
+既発生EventをRisk Registerへ入れて終了。
 
-すぐEscalation。
+Potential RiskをIssueとして即修正。
 
-すぐChange。
+Issue発生 = 自動的にBaseline変更。
 
 </div>
 
 <div class="memory">
 
-Think
+Future
 
-before
+→ Risk
 
-acting.
+
+Happened
+
+→ Issue
+
+
+Plan Changes
+
+→ Change
 
 </div>
 
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 6　PMIが嫌う選択肢</h2>
-
-<div class="rule">
-
-・Ignore
-
-・Assume
-
-・Blame
-
-・Hide
-
-・Skip Process
-
-・Act Alone
-
-</div>
-
-<div class="memory">
-
-PMI
-
-hates shortcuts.
-
-</div>
-
-</section>
-
-
-
-<section class="card">
-
-<h2>Rule 7　PMIが好む選択肢</h2>
-
-<div class="rule">
-
-Understand
-
-Analyze
-
-Collaborate
-
-Document
-
-Coach
-
-Monitor
-
-Improve
-
-</div>
-
-<div class="memory">
-
-PMI
-
-loves
-
-structured thinking.
-
-</div>
-
-</section>
-
-
-
-<section class="card">
-
-<h2>Rule 8　Predictive vs Agile</h2>
+<h2>Rule 8　Plan vs Execute vs Monitor</h2>
 
 <table>
 
 <tr>
-<th>Predictive</th>
-<th>Agile</th>
+<th>Question Intent</th>
+<th>Think</th>
 </tr>
 
 <tr>
-<td>Plan First</td>
-<td>Value First</td>
+<td>どう管理するか決める</td>
+<td>Plan</td>
 </tr>
 
 <tr>
-<td>Baseline</td>
-<td>Backlog</td>
+<td>承認済みWorkを行う</td>
+<td>Execute</td>
 </tr>
 
 <tr>
+<td>Actual vs Plannedを見る</td>
+<td>Monitor / Control</td>
+</tr>
+
+<tr>
+<td>Baselineを変更する</td>
 <td>Change Control</td>
-<td>Prioritization</td>
 </tr>
 
 <tr>
-<td>Deliver Once</td>
-<td>Deliver Often</td>
+<td>完了・受入・Archive</td>
+<td>Close</td>
 </tr>
 
 </table>
 
+<div class="trap">
+
+Planを作る問題で実装。
+
+Monitoring問題で新しいPlanをゼロから作る。
+
+</div>
+
 <div class="memory">
 
-Know
+Plan
 
-which world
+↓
 
-you are in.
+Do
+
+↓
+
+Check
+
+↓
+
+Adjust
 
 </div>
 
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 9　Hybrid</h2>
+<h2>Rule 9　Predictiveの基本思考</h2>
 
 <div class="rule">
 
-Governance
+Requirements
+
+↓
+
+Scope
+
+↓
+
+WBS
+
+↓
+
+Plan / Baselines
+
+↓
+
+Execute
+
+↓
+
+Monitor & Control
+
+↓
+
+Formal Change
+
+↓
+
+Close
+
+</div>
+
+<div class="trap">
+
+Approved Baselineを非公式に変更。
+
+Customer要求を即実装。
+
+</div>
+
+<div class="memory">
+
+Predictive
+
+=
+
+Plan + Baseline + Control
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 10　Agileの基本思考</h2>
+
+<div class="rule">
+
+Value
+
+↓
+
+Prioritized Backlog
+
+↓
+
+Small Increment
+
+↓
+
+Feedback
+
+↓
+
+Inspect & Adapt
+
+↓
+
+Repeat
+
+</div>
+
+<p>
+AgileではCommand & Controlより、
+Team Collaboration・Feedback・Adaptation・Value Deliveryを優先する。
+</p>
+
+<div class="trap">
+
+Detailed Long-term Planを固定。
+
+PMがTaskを毎日割り当てる。
+
+変化を防ぐ。
+
+</div>
+
+<div class="memory">
+
+Value
+
+↓
+
+Feedback
+
+↓
+
+Adapt
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 11　Hybridの基本思考</h2>
+
+<div class="rule">
+
+Predictive Governance
 
 +
 
-Agility
+Adaptive Delivery
 
-=
+↓
 
 Hybrid
 
 </div>
 
+<p>
+Hybridでは、
+Delivery方法は柔軟にAdaptしながら、
+BaselineやGovernanceが必要な領域ではFormal Controlを維持する。
+</p>
+
 <div class="trap">
 
+Hybrid
+
+=
+
 全部Predictive。
+
+
+Hybrid
+
+=
 
 全部Agile。
 
@@ -398,19 +710,18 @@ Hybrid
 
 <div class="memory">
 
-Hybrid
+Adapt Delivery
 
-uses both.
+Preserve Governance
 
 </div>
 
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 10　試験で迷ったら</h2>
+<h2>Rule 12　PMIのPeople問題の基本順序</h2>
 
 <div class="rule">
 
@@ -418,11 +729,7 @@ Understand
 
 ↓
 
-Analyze
-
-↓
-
-Communicate
+Discuss / Coach
 
 ↓
 
@@ -430,22 +737,688 @@ Collaborate
 
 ↓
 
-Formal Process
+Facilitate
 
 ↓
 
-Escalate Last
+Resolve
+
+↓
+
+Escalate if Necessary
+
+</div>
+
+<div class="trap">
+
+Command。
+
+Blame。
+
+Punish。
+
+Replace。
+
+Escalate First。
 
 </div>
 
 <div class="memory">
 
-This sequence
+Coach First
 
-solves
-
-most PMP questions.
+Escalate Last
 
 </div>
 
 </section>
+
+
+<section class="card">
+
+<h2>Rule 13　Escalationを選ぶ条件</h2>
+
+<div class="rule">
+
+Can PM / Team Resolve?
+
+↓
+
+YES
+
+→ Resolve at Current Level
+
+
+NO
+
+↓
+
+Outside Authority
+
+or
+
+Unresolved after Appropriate Action
+
+↓
+
+Escalate
+
+</div>
+
+<p>
+Escalationは悪いActionではないが、
+PMが自分のAuthorityで解決できる問題に最初から使わない。
+</p>
+
+<div class="trap">
+
+Senior Stakeholderが関係
+
+→ Sponsorへ即Escalate。
+
+
+問題が重大
+
+→ 自動的にEscalate。
+
+</div>
+
+<div class="memory">
+
+Escalate
+
+when necessary
+
+not automatically
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 14　Meeting / Workshopを過大評価しない</h2>
+
+<div class="rule">
+
+Need Information / Alignment / Collaboration?
+
+↓
+
+Meeting may be appropriate
+
+
+Known Defect?
+
+↓
+
+Correct it
+
+
+Need Quantitative Assessment?
+
+↓
+
+Analyze
+
+
+Need Formal Change?
+
+↓
+
+Change Control
+
+</div>
+
+<div class="trap">
+
+対立がある
+
+→ Meeting。
+
+
+問題がある
+
+→ Workshop。
+
+
+Stakeholderがいる
+
+→ Meeting。
+
+</div>
+
+<div class="memory">
+
+Choose Action
+
+that solves
+
+the actual problem
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 15　DocumentはActionの代わりではない</h2>
+
+<div class="rule">
+
+Document
+
++
+
+Take Appropriate Action
+
++
+
+Monitor
+
+</div>
+
+<p>
+Risk Register、Issue Log、Change Log等への記録は重要だが、
+記録しただけでは問題を解決していない。
+</p>
+
+<div class="trap">
+
+Risk Register更新
+
+→ 完了。
+
+
+Issue Log更新
+
+→ 完了。
+
+
+Status Report作成
+
+→ 問題解決。
+
+</div>
+
+<div class="memory">
+
+Document
+
+≠
+
+Resolve
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 16　Review Existing Information Before Creating New</h2>
+
+<div class="rule">
+
+Problem / Decision
+
+↓
+
+Review Relevant
+
+Plan
+
+Register
+
+Baseline
+
+Contract
+
+RTM
+
+WBS Dictionary
+
+Lessons Learned
+
+↓
+
+Then Decide / Update
+
+</div>
+
+<p>
+既存の正式情報に答えがある場合、
+新しいProcessやDocumentを作る前にそれを確認する。
+</p>
+
+<div class="trap">
+
+Ownership不明
+
+→ PMが勝手に決定。
+
+
+Requirement Conflict
+
+→ 新しいMeetingだけ実施。
+
+</div>
+
+<div class="memory">
+
+Check
+
+Existing Artifacts
+
+First
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 17　PMIが好むAction</h2>
+
+<div class="rule">
+
+Understand
+
+Analyze
+
+Collaborate
+
+Coach
+
+Facilitate
+
+Communicate
+
+Document
+
+Follow Governance
+
+Monitor
+
+Improve
+
+</div>
+
+<div class="trap">
+
+Ignore
+
+Assume
+
+Blame
+
+Hide
+
+Bypass
+
+Act Alone
+
+Skip Process
+
+</div>
+
+<div class="memory">
+
+Structured
+
+Collaborative
+
+Transparent
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 18　極端な選択肢に注意</h2>
+
+<div class="rule">
+
+Usually Suspicious
+
+↓
+
+Immediately Replace
+
+Immediately Escalate
+
+Stop All Work
+
+Ignore
+
+Always
+
+Never
+
+Freeze Everything
+
+</div>
+
+<p>
+極端なActionが必ず不正解という意味ではない。
+
+Safety・Legal・Critical Quality等では
+強いActionが必要な場合もあるため、
+Contextで判断する。
+</p>
+
+<div class="trap">
+
+「Immediately」がある
+
+→ 自動的に不正解。
+
+
+「Stop」がある
+
+→ 自動的に不正解。
+
+</div>
+
+<div class="memory">
+
+Extreme Action
+
+needs
+
+Extreme Context
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 19　情報不足ならAssumeしない</h2>
+
+<div class="rule">
+
+Missing Information
+
+↓
+
+Do Not Invent Facts
+
+↓
+
+Clarify / Review / Analyze
+
+↓
+
+Then Decide
+
+</div>
+
+<p>
+問題文に書かれていない
+「冗長Processがある」
+「Vendorが悪い」
+「Resourceを追加できる」
+などを勝手に仮定しない。
+</p>
+
+<div class="trap">
+
+もっともらしい前提を自分で追加して選択肢を正当化。
+
+</div>
+
+<div class="memory">
+
+Use
+
+Only Given Facts
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 20　最も直接的に問題を解くActionを選ぶ</h2>
+
+<div class="rule">
+
+Question asks X
+
+↓
+
+Which Option
+
+Directly Addresses X
+
+while following PMI principles?
+
+↓
+
+Choose It
+
+</div>
+
+<p>
+正しいProject Management Practiceでも、
+問題文が聞いている課題を直接解決しなければ
+Best Answerではない。
+</p>
+
+<div class="trap">
+
+一般的に良いActionだから選ぶ。
+
+関連するTool名が出ているから選ぶ。
+
+</div>
+
+<div class="memory">
+
+Relevant
+
+Direct
+
+Appropriate
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 21　PMP Decision Ladder</h2>
+
+<div class="rule">
+
+1. What actually happened?
+
+↓
+
+2. Future Risk or Existing Issue?
+
+↓
+
+3. Predictive / Agile / Hybrid?
+
+↓
+
+4. Is information sufficient?
+
+↓
+
+5. Is analysis required?
+
+↓
+
+6. Can PM / Team resolve it?
+
+↓
+
+7. Is formal governance required?
+
+↓
+
+8. Act
+
+↓
+
+9. Verify / Monitor
+
+</div>
+
+<div class="memory">
+
+Context
+
+↓
+
+Classify
+
+↓
+
+Analyze
+
+↓
+
+Act
+
+↓
+
+Verify
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 22　Process Framework Summary</h2>
+
+<div class="rule">
+
+Understand Context
+
+↓
+
+Classify the Problem
+
+↓
+
+Identify Delivery Approach
+
+↓
+
+Review Existing Information
+
+↓
+
+Analyze if Needed
+
+↓
+
+Collaborate / Decide
+
+↓
+
+Use Appropriate Process
+
+↓
+
+Act
+
+↓
+
+Monitor / Verify
+
+</div>
+
+<h3>試験で迷ったら</h3>
+
+<ul>
+
+<li>FIRST / NEXTでは順番を見る</li>
+
+<li>問題文ですでに何が実施済みか確認する</li>
+
+<li>Future = Risk、Happened = Issue</li>
+
+<li>何でもAnalyzeではない</li>
+
+<li>何でもMeetingではない</li>
+
+<li>Document更新だけで問題解決と考えない</li>
+
+<li>PredictiveではBaselineとFormal Changeを守る</li>
+
+<li>AgileではValue・Feedback・Adaptationを見る</li>
+
+<li>HybridではAdaptive Delivery + Governance</li>
+
+<li>People問題はCoach / Facilitateを優先する</li>
+
+<li>Escalationは必要な場合のみ</li>
+
+<li>問題文にない事実を仮定しない</li>
+
+<li>極端なActionには極端なContextが必要</li>
+
+<li>最も直接的に問題を解決する選択肢を選ぶ</li>
+
+</ul>
+
+<div class="memory">
+
+Understand
+
+↓
+
+Classify
+
+↓
+
+Analyze
+
+↓
+
+Act
+
+↓
+
+Verify
+
+</div>
+
+</section>
+
+<footer>
+
+PMP Personal Rulebook v7
+
+</footer>
+
+<div class="page-nav">
+
+<a href="13_Integration.html">← Previous</a>
+
+<a href="15_Final_Checklist.html">Next →</a>
+
+</div>
+
+</div>
+
+<a href="#" class="top">↑</a>
+
+</body>
+
+</html>
