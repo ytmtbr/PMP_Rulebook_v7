@@ -1,3 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PMP Rulebook v7 - 13 Integration</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<header>
+
+<h1>PMP Personal Rulebook v7</h1>
+
+<div class="subtitle">
+Decision Support System for PMI Study Hall
+</div>
+
+<nav>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="01_Stakeholder.html">01</a>
+
+<a href="02_Governance.html">02</a>
+
+<a href="03_Risk.html">03</a>
+
+<a href="04_Quality.html">04</a>
+
+<a href="05_Agile.html">05</a>
+
+<a href="06_Procurement.html">06</a>
+
+<a href="07_Scope_Requirements.html">07</a>
+
+<a href="08_Schedule_Cost_EVM.html">08</a>
+
+<a href="09_Team_Leadership.html">09</a>
+
+<a href="10_Communication.html">10</a>
+
+<a href="11_Change_Management.html">11</a>
+
+<a href="12_Business_Value.html">12</a>
+
+<a href="13_Integration.html" class="active">13</a>
+
+<a href="14_Process_Framework.html">14</a>
+
+<a href="15_Final_Checklist.html">15</a>
+
+</nav>
+
+</header>
+
+<h2>13 Integration</h2>
+
+
 <section class="card">
 
 <h2>Rule 1　Project Integration Management</h2>
@@ -16,11 +79,15 @@ Project Management Plan
 
 ↓
 
-Direct & Manage Work
+Direct & Manage Project Work
 
 ↓
 
-Monitor & Control
+Manage Project Knowledge
+
+↓
+
+Monitor & Control Project Work
 
 ↓
 
@@ -28,13 +95,21 @@ Integrated Change Control
 
 ↓
 
-Close Project
+Close Project / Phase
 
 </div>
 
+<p>
+Integration Managementは、
+Scope・Schedule・Costなどを個別に管理するのではなく、
+Project全体を統合して意思決定する。
+</p>
+
 <div class="trap">
 
-各Knowledge Areaを独立して考える。
+各Knowledge Areaを独立して最適化。
+
+一つの制約だけ見てDecision。
 
 </div>
 
@@ -42,14 +117,13 @@ Close Project
 
 Integration
 
-connects
+=
 
-everything.
+Whole Project
 
 </div>
 
 </section>
-
 
 
 <section class="card">
@@ -58,11 +132,11 @@ everything.
 
 <div class="rule">
 
-Business Case
+Business Need / Business Case
 
 ↓
 
-Sponsor Approval
+Sponsor
 
 ↓
 
@@ -70,135 +144,365 @@ Project Charter
 
 ↓
 
-Project Authorization
+Formal Authorization
+
+↓
+
+PM Authority
 
 </div>
 
+<p>
+Project CharterはProjectを正式にAuthorizeし、
+Project Managerへ組織Resourcesを使用するAuthorityを与える。
+</p>
+
 <div class="trap">
 
-PMがProjectを開始する。
+PMが自分でProjectをAuthorize。
+
+Project Management Plan完成後にCharter作成。
+
+Charter = 詳細Project Plan。
 
 </div>
 
 <div class="memory">
 
-Sponsor
+Charter
 
-authorizes
+Authorizes
 
-the project.
+Project + PM
 
 </div>
 
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 3　Project Management Plan</h2>
+<h2>Rule 3　Project Charterに含まれるもの</h2>
 
 <div class="rule">
 
-Integrates
+High-level Purpose
 
-Scope
++
 
-Schedule
+High-level Scope
 
-Cost
++
 
-Quality
+High-level Requirements
 
-Resources
++
 
-Communication
+High-level Risks
 
-Risk
++
 
-Procurement
+Summary Milestones
 
-Stakeholders
++
+
+Summary Budget
+
++
+
+Success Criteria
+
++
+
+Key Stakeholders
+
++
+
+PM Authority
 
 </div>
 
 <div class="trap">
 
-単なるスケジュールだと思う。
+詳細WBS。
+
+詳細Schedule。
+
+詳細Risk Register。
+
+詳細Cost Baseline。
 
 </div>
 
 <div class="memory">
 
-The PMP Plan
+Charter
 
-integrates
+=
 
-every subsidiary plan.
+High Level
 
 </div>
 
 </section>
 
 
+<section class="card">
+
+<h2>Rule 4　Project Management Plan</h2>
+
+<div class="rule">
+
+Subsidiary Management Plans
+
++
+
+Baselines
+
++
+
+Management Approach
+
+↓
+
+Integrated
+
+Project Management Plan
+
+</div>
+
+<p>
+Project Management Planは、
+ProjectをどのようにExecute・Monitor・Control・Closeするかを統合する。
+</p>
+
+<div class="trap">
+
+Project Management Plan
+
+=
+
+Scheduleだけ。
+
+
+Project Management Plan
+
+=
+
+Document一覧。
+
+</div>
+
+<div class="memory">
+
+PMP Plan
+
+=
+
+Integrated HOW
+
+</div>
+
+</section>
+
 
 <section class="card">
 
-<h2>Rule 4　Project Management Plan vs Documents</h2>
+<h2>Rule 5　Project Management Planの構造</h2>
+
+<div class="rule">
+
+Project Management Plan
+
+↓
+
+Subsidiary Plans
+
++
+
+Baselines
+
+</div>
 
 <table>
 
 <tr>
-<th>Plan</th>
-<th>Documents</th>
+<th>Subsidiary Plans</th>
+<th>Baselines</th>
 </tr>
 
 <tr>
-<td>How to manage</td>
-<td>Current project information</td>
+<td>Scope Management Plan</td>
+<td>Scope Baseline</td>
 </tr>
 
 <tr>
-<td>Management approach</td>
-<td>Status / Register / Log</td>
+<td>Schedule Management Plan</td>
+<td>Schedule Baseline</td>
 </tr>
 
 <tr>
-<td>Baseline included</td>
-<td>Updated frequently</td>
+<td>Cost Management Plan</td>
+<td>Cost Baseline</td>
+</tr>
+
+<tr>
+<td>Quality Management Plan</td>
+<td>Performance Measurement Baseline</td>
+</tr>
+
+<tr>
+<td>Risk Management Plan</td>
+<td>―</td>
+</tr>
+
+<tr>
+<td>Communications Management Plan</td>
+<td>―</td>
+</tr>
+
+<tr>
+<td>Procurement Management Plan</td>
+<td>―</td>
+</tr>
+
+<tr>
+<td>Stakeholder Engagement Plan</td>
+<td>―</td>
 </tr>
 
 </table>
 
 <div class="trap">
 
-Risk RegisterをPlanと思う。
+Risk RegisterをRisk Management Planと思う。
+
+WBSだけをScope Baselineと思う。
 
 </div>
 
 <div class="memory">
 
-Plan = HOW
+Plan
 
-Documents = WHAT
+=
+
+How to Manage
+
+
+Baseline
+
+=
+
+Approved Reference
 
 </div>
 
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 5　Direct and Manage Project Work</h2>
+<h2>Rule 6　Project Management Plan vs Project Documents</h2>
+
+<table>
+
+<tr>
+<th>Project Management Plan</th>
+<th>Project Documents</th>
+</tr>
+
+<tr>
+<td>Management Approach</td>
+<td>Current Project Information</td>
+</tr>
+
+<tr>
+<td>How work is managed</td>
+<td>Registers / Logs / Estimates</td>
+</tr>
+
+<tr>
+<td>Baselinesを含む</td>
+<td>Execution中に継続更新</td>
+</tr>
+
+</table>
 
 <div class="rule">
 
-Approved Plan
+Examples of Documents
 
 ↓
 
-Execute Work
+Risk Register
+
+Issue Log
+
+Stakeholder Register
+
+Lessons Learned Register
+
+Requirements Documentation
+
+RTM
+
+Change Log
+
+</div>
+
+<div class="trap">
+
+Risk Register
+
+=
+
+Risk Management Plan。
+
+
+Stakeholder Register
+
+=
+
+Stakeholder Engagement Plan。
+
+</div>
+
+<div class="memory">
+
+Plan
+
+=
+
+HOW
+
+
+Documents
+
+=
+
+Project Information
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 7　Direct and Manage Project Work</h2>
+
+<div class="rule">
+
+Approved Project Management Plan
+
+↓
+
+Execute Planned Work
+
+↓
+
+Implement Approved Changes
 
 ↓
 
@@ -206,13 +510,19 @@ Produce Deliverables
 
 ↓
 
-Collect Work Performance Data
+Generate Work Performance Data
+
+↓
+
+Raise Change Requests if Needed
 
 </div>
 
 <div class="trap">
 
-Monitoringを先に行う。
+未承認Changeを実装。
+
+MonitoringだけしてExecutionしない。
 
 </div>
 
@@ -220,43 +530,57 @@ Monitoringを先に行う。
 
 Execute
 
-before
-
-Control.
+Approved Work
 
 </div>
 
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 6　Monitor and Control</h2>
+<h2>Rule 8　Monitor and Control Project Work</h2>
 
 <div class="rule">
 
-Compare
-
-Actual
-
-vs
-
-Baseline
+Actual Performance
 
 ↓
 
-Variance
+Compare with Plan / Baselines
 
 ↓
 
-Corrective Action
+Analyze Variance / Trends
+
+↓
+
+Forecast
+
+↓
+
+Determine Action
+
+↓
+
+Change Request if Needed
 
 </div>
 
+<p>
+Monitor & Controlは単なるStatus確認ではない。
+
+Variance・Trend・Forecastを分析し、
+Project全体への対応を決める。
+</p>
+
 <div class="trap">
 
-問題が出るまで何もしない。
+問題が発生してからだけ確認。
+
+Actual Dataを集めて終了。
+
+Varianceが出たらBaselineを書き換える。
 
 </div>
 
@@ -264,19 +588,22 @@ Corrective Action
 
 Compare
 
-Actual
+↓
 
-with
+Analyze
 
-Plan.
+↓
+
+Act
 
 </div>
 
 </section>
 
+
 <section class="card">
 
-<h2>Rule 7　Integrated Change Control</h2>
+<h2>Rule 9　Integrated Change Control</h2>
 
 <div class="rule">
 
@@ -284,73 +611,130 @@ Change Request
 
 ↓
 
-Impact Analysis
+Evaluate Whole-project Impact
 
 ↓
 
-Approve / Reject
+Review / Approve / Reject
 
 ↓
 
-Update Baselines
+Update Relevant Plans / Baselines
+
+↓
+
+Communicate
 
 ↓
 
 Implement
 
+↓
+
+Verify
+
 </div>
+
+<p>
+Integratedの意味は、
+ScopeだけでなくSchedule・Cost・Quality・Risk・Resources・
+Stakeholders・Business Valueへの影響を横断的に見ること。
+</p>
 
 <div class="trap">
 
-Scopeだけ見る。
+Scope Change
+
+→ Scopeだけ評価。
+
+
+Sponsor要求
+
+→ Impact Analysisなしで実施。
 
 </div>
 
 <div class="memory">
 
-Integration
+Change One Thing
 
-considers
+↓
 
-every knowledge area.
+Check Everything
 
 </div>
 
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 8　Work Performance Data / Information / Reports</h2>
+<h2>Rule 10　Work Performance Data / Information / Reports</h2>
 
 <table>
 
 <tr>
 <th>Type</th>
 <th>Meaning</th>
+<th>Example</th>
 </tr>
 
 <tr>
-<td>Data</td>
+<td>Work Performance Data</td>
 <td>Raw observations</td>
+<td>Actual cost / completed work / defect count</td>
 </tr>
 
 <tr>
-<td>Information</td>
-<td>Analyzed data</td>
+<td>Work Performance Information</td>
+<td>Analyzed / contextualized data</td>
+<td>CPI / SPI / variance / trend</td>
 </tr>
 
 <tr>
-<td>Reports</td>
-<td>Presented information</td>
+<td>Work Performance Reports</td>
+<td>Decision-useful presentation</td>
+<td>Status report / dashboard / forecast report</td>
 </tr>
 
 </table>
 
+<div class="rule">
+
+Data
+
+↓
+
+Analyze
+
+↓
+
+Information
+
+↓
+
+Organize / Present
+
+↓
+
+Reports
+
+</div>
+
 <div class="trap">
 
-DataとInformationを混同する。
+Raw Actual Cost
+
+=
+
+Work Performance Information。
+
+
+CPI
+
+=
+
+Raw Data。
 
 </div>
 
@@ -364,19 +748,101 @@ Information
 
 ↓
 
-Report
+Reports
 
 </div>
 
 </section>
 
 
+<section class="card">
+
+<h2>Rule 11　Issue Management</h2>
+
+<div class="rule">
+
+Issue Occurs
+
+↓
+
+Understand / Analyze
+
+↓
+
+Record in Issue Log
+
+↓
+
+Assign Owner
+
+↓
+
+Take Action
+
+↓
+
+Monitor Resolution
+
+↓
+
+Change Request if Required
+
+</div>
+
+<p>
+Issueは既に発生した問題。
+
+Issue Logへ記録すること自体が解決ではなく、
+OwnerとActionを決めてResolutionまで管理する。
+</p>
+
+<div class="trap">
+
+Issue発生
+
+→ Risk Registerだけ更新。
+
+
+Issue Log更新
+
+→ 対応完了。
+
+</div>
+
+<div class="memory">
+
+Issue
+
+=
+
+Happened
+
+↓
+
+Act
+
+</div>
+
+</section>
+
 
 <section class="card">
 
-<h2>Rule 9　Lessons Learned</h2>
+<h2>Rule 12　Manage Project Knowledge</h2>
 
 <div class="rule">
+
+Existing Knowledge
+
+↓
+
+Apply to Project
+
+↓
+
+Generate New Knowledge
+
+↓
 
 Capture
 
@@ -388,51 +854,187 @@ Share
 
 Reuse
 
-↓
-
-Improve Future Projects
-
 </div>
+
+<p>
+Knowledge Managementは、
+過去のLessons Learnedを使うだけでなく、
+Project中に得たTacit / Explicit Knowledgeを共有・再利用する。
+</p>
 
 <div class="trap">
 
-Project終了時だけ作る。
+Knowledge Management
 
-犯人探しをする。
+=
+
+Document保存だけ。
+
+
+Project CloseまでKnowledgeを記録しない。
 
 </div>
 
 <div class="memory">
 
-Lessons Learned
+Use Knowledge
 
-is continuous.
+↓
+
+Create Knowledge
+
+↓
+
+Share Knowledge
 
 </div>
 
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 10　Project Closing</h2>
+<h2>Rule 13　Lessons LearnedはContinuous</h2>
 
 <div class="rule">
 
-Verify Acceptance
+Experience / Event
 
 ↓
 
-Close Contracts
+Capture Lesson
 
 ↓
 
-Archive Documents
+Lessons Learned Register
 
 ↓
 
-Lessons Learned
+Apply During Current Project
+
+↓
+
+Share
+
+↓
+
+Archive at Close
+
+</div>
+
+<p>
+Lessons LearnedはProject終了時だけ作るものではない。
+
+Project中にも継続してCaptureし、
+同じProject内でも再利用する。
+</p>
+
+<div class="trap">
+
+Closeoutで初めてLessons Learned Meeting。
+
+失敗だけを記録。
+
+責任者を特定するために使う。
+
+</div>
+
+<div class="memory">
+
+Learn
+
+Throughout
+
+the Project
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 14　Project Knowledge Transfer</h2>
+
+<div class="rule">
+
+Critical Knowledge Identified
+
+↓
+
+Transfer
+
+↓
+
+Document
+
+↓
+
+Confirm Understanding
+
+↓
+
+Make Knowledge Available
+
+</div>
+
+<p>
+特にResource交代やTransitionでは、
+Tacit Knowledgeが失われる前にTransferする。
+</p>
+
+<div class="trap">
+
+Documentation Repositoryだけ用意。
+
+Member離任後にKnowledge Transfer。
+
+</div>
+
+<div class="memory">
+
+Transfer
+
+Before Knowledge
+
+Leaves
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 15　Project / Phase Closing</h2>
+
+<div class="rule">
+
+Confirm Work Complete
+
+↓
+
+Obtain Formal Acceptance
+
+↓
+
+Complete Contract / Administrative Closure
+
+↓
+
+Transition Deliverables
+
+↓
+
+Finalize Records
+
+↓
+
+Capture Final Lessons Learned
+
+↓
+
+Archive
 
 ↓
 
@@ -442,57 +1044,160 @@ Release Resources
 
 <div class="trap">
 
-成果物完成だけで終了。
+Deliverable完成
+
+→ 即Project終了。
+
+
+Team解散
+
+→ 後からAcceptance。
+
+
+Lessons Learnedだけ実施して終了。
 
 </div>
 
 <div class="memory">
 
+Accept
+
+↓
+
 Close
 
-everything,
+↓
 
-not only delivery.
+Archive
+
+↓
+
+Release
 
 </div>
 
 </section>
 
 
-
 <section class="card">
 
-<h2>Rule 11　Integration Thinking</h2>
+<h2>Rule 16　Acceptance vs Closing</h2>
 
 <div class="rule">
 
-Every major decision
+Deliverable Verification
 
 ↓
 
-Check
+Customer / Sponsor Acceptance
+
+↓
+
+Project / Phase Closure
+
+</div>
+
+<p>
+成果物がTechnicalに完成したことと、
+Customerが正式にAcceptanceしたこと、
+Projectが正式にCloseされたことは別。
+</p>
+
+<div class="trap">
+
+Testing Passed
+
+=
+
+Project Closed。
+
+
+Product Delivered
+
+=
+
+Administrative Closure完了。
+
+</div>
+
+<div class="memory">
+
+Complete
+
+≠
+
+Accepted
+
+≠
+
+Closed
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Rule 17　Integration Decision Thinking</h2>
+
+<div class="rule">
+
+Major Decision
+
+↓
+
+Check Impact on
 
 Scope
 
++
+
 Schedule
+
++
 
 Cost
 
++
+
 Quality
 
-Risk
++
 
 Resources
 
++
+
+Risk
+
++
+
+Procurement
+
++
+
 Stakeholders
 
++
+
 Business Value
+
+↓
+
+Choose Best Overall Project Outcome
 
 </div>
 
 <div class="trap">
 
-1つのKnowledge Areaだけ最適化する。
+Costだけ最小化。
+
+Scheduleだけ守る。
+
+Qualityだけ最大化。
+
+一つのStakeholder要求だけ最適化。
 
 </div>
 
@@ -500,27 +1205,95 @@ Business Value
 
 Optimize
 
-the whole project,
-
-not one area.
+the Whole Project
 
 </div>
 
 </section>
 
 
+<section class="card">
+
+<h2>Rule 18　Integration問題の「まず何を見る？」</h2>
+
+<div class="rule">
+
+Need Overall Project Direction?
+
+↓
+
+Project Management Plan
+
+
+Need Authorization / High-level Purpose?
+
+↓
+
+Project Charter
+
+
+Need Current Specific Information?
+
+↓
+
+Project Documents
+
+
+Need Actual vs Plan?
+
+↓
+
+Work Performance Information
+
+
+Need Plan / Baseline Change?
+
+↓
+
+Integrated Change Control
+
+</div>
+
+<div class="trap">
+
+何でもProject Management Plan。
+
+何でもRisk Register。
+
+何でもSponsorへ確認。
+
+</div>
+
+<div class="memory">
+
+Choose
+
+the Artifact
+
+that Matches
+
+the Question
+
+</div>
+
+</section>
+
 
 <section class="card">
 
-<h2>Rule 12　Integration Summary</h2>
+<h2>Rule 19　Integration Summary</h2>
 
 <div class="rule">
+
+Business Need
+
+↓
 
 Charter
 
 ↓
 
-Project Management Plan
+Integrated Project Management Plan
 
 ↓
 
@@ -528,46 +1301,92 @@ Execute
 
 ↓
 
-Monitor
+Manage Knowledge
 
 ↓
 
-Integrated Change
+Monitor & Control
 
 ↓
 
-Close
+Integrated Change Control
+
+↓
+
+Formal Close
 
 </div>
 
-<h3>あなたのFull Examで多かったミス</h3>
+<h3>試験で迷ったら</h3>
 
 <ul>
 
-<li>Impact Analysisを飛ばす</li>
+<li>Integration = Project全体を見る</li>
 
-<li>Project DocumentsとManagement Planを混同する</li>
+<li>Charter = ProjectとPMをAuthorizeするHigh-level文書</li>
 
-<li>Data / Information / Reportを混同する</li>
+<li>Project Management Plan = Integrated HOW</li>
 
-<li>Lessons Learnedを最後だけと思う</li>
+<li>Project Documents = Current Project Information</li>
 
-<li>Integration視点ではなく個別最適で考える</li>
+<li>実行するのはApproved Work / Approved Changes</li>
+
+<li>MonitorではActual vs Baselineを比較して分析する</li>
+
+<li>Changeでは一つのKnowledge Areaだけ見ない</li>
+
+<li>Data → Information → Reportsを区別する</li>
+
+<li>Issue Logへ記録するだけで終わらない</li>
+
+<li>Lessons LearnedはProject中も継続する</li>
+
+<li>Knowledge TransferはKnowledgeが失われる前に行う</li>
+
+<li>Complete ≠ Accepted ≠ Closed</li>
+
+<li>個別最適ではなくProject全体のOutcomeを最適化する</li>
 
 </ul>
 
 <div class="memory">
 
-Integration問題は
-
 Whole Project
 
-Impact Analysis
+↓
 
-Project Management Plan
+Integrated Plan
 
-この3つを最優先。
+↓
+
+Integrated Decision
+
+↓
+
+Integrated Change
 
 </div>
 
 </section>
+
+<footer>
+
+PMP Personal Rulebook v7
+
+</footer>
+
+<div class="page-nav">
+
+<a href="12_Business_Value.html">← Previous</a>
+
+<a href="14_Process_Framework.html">Next →</a>
+
+</div>
+
+</div>
+
+<a href="#" class="top">↑</a>
+
+</body>
+
+</html>
